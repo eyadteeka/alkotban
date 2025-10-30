@@ -9,16 +9,23 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-4 footer-col">
             <div className="footer_contact">
-              <h4>Contact Us</h4>
+              <h4>تواصل معنا</h4>
               <div className="contact_link_box">
+                  {/* رقم الوتس ضيف ايقونة وتس  */}
                 <a href="">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>Location</span>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <span>00218928030400</span>
+                </a>
+                {/* تلفون عادي ضيف ايقونة تلفون */}
+                <a href="">
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <span>00218913270016</span>
                 </a>
                 <a href="">
                   <i className="fa fa-phone" aria-hidden="true"></i>
-                  <span>Call +01 1234567890</span>
+                  <span>00218912143510</span>
                 </a>
+                {/* اضافة الايميل */}
                 <a href="">
                   <i className="fa fa-envelope" aria-hidden="true"></i>
                   <span>demo@gmail.com</span>
@@ -28,10 +35,9 @@ const Footer = () => {
           </div>
           <div className="col-md-4 footer-col">
             <div className="footer_detail">
-              <a href="" className="footer-logo">Feane</a>
+              <a href="" className="footer-logo">ALMAISOON</a>
               <p>
-                Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-              </p>
+في الميسون، نؤمن أن الترفيه أسلوب حياة، لذلك نعمل باستمرار على تطوير تشكيلتنا وتقديم كل جديد في عالم المرح والمغامرة.              </p>
               <div className="footer_social">
                 <a href=""><i className="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href=""><i className="fa fa-twitter" aria-hidden="true"></i></a>

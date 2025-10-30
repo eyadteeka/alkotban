@@ -13,15 +13,18 @@ const AboutSection = () => {
           <div className="col-md-6">
             <div className="detail-box">
               <div className="heading_container">
-                <h2>We Are Feane</h2>
+                <h2>ماهي شركة ميسون؟</h2>
               </div>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                the middle of text. All
+                منذ عام 2013، تأسست شركة الميسون في مدينة مصراتة – ليبيا لتكون وجهتكم الأولى لعالم الترفيه والجودة.
+بدأت رحلتنا بهدف توفير منتجات ترفيهية مميزة تجمع بين المتعة، الأمان، والتصميم العصري، لتلبي احتياجات مختلف الأعمار من الأطفال إلى الكبار.
+
+نحن وكلاء معتمدون لمنتجات شركة SPOLO المعروفة بجودتها العالية وابتكارها في عالم الألعاب والمعدات الترفيهية.
+من خلال تعاوننا مع أفضل الموردين، نحرص على تقديم تجربة تسوّق متكاملة تشمل ألعاب الأطفال، الدراجات الصغيرة، السكوترات، والمعدات الترفيهية المنزلية والخارجية.
+
+في الميسون، نؤمن أن الترفيه أسلوب حياة، لذلك نعمل باستمرار على تطوير تشكيلتنا وتقديم كل جديد في عالم المرح والمغامرة.
               </p>
-              <a href="">Read More</a>
+              {/* <a href="">Read More</a> */}
             </div>
           </div>
         </div>

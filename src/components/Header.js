@@ -9,7 +9,6 @@ const Header = () => {
   const { activeSection } = useNavigation();
   const { scrollToSection } = useSmoothScroll();
 
-  // تأثير التمرير على الـ Header
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -46,7 +45,7 @@ const Header = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="/">
-            <span>Feane</span>
+            <span>ALMAISOON</span>
           </a>
 
           <button 
