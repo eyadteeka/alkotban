@@ -4,6 +4,7 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  direction: rtl;
 }
 
 .layout_padding {
@@ -411,7 +412,7 @@ a:focus {
   margin-top: 45px;
   border-radius: 5px;
   padding: 20px 15px;
-  background-color: #222831;
+  background-color: red;
   color: #ffffff;
 }
 
@@ -498,7 +499,7 @@ a:focus {
 }
 
 .food_section .filters_menu li.active {
-  background-color: #222831;
+  background-color: red;
   color: #ffffff;
 }
 
@@ -510,7 +511,7 @@ a:focus {
   color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
+  background: linear-gradient(to bottom, #f1f2f3 25px, red 25px);
 }
 
 .food_section .box .img-box {
@@ -615,7 +616,7 @@ a:focus {
 }
 
 .about_section {
-  background: #222831;
+  background: red;
   color: #ffffff;
 }
 
@@ -686,19 +687,19 @@ a:focus {
 }
 
 .book_section .form_container .form-control::-webkit-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .book_section .form_container .form-control:-ms-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .book_section .form_container .form-control::-ms-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .book_section .form_container .form-control::placeholder {
-  color: #222222;
+  color: red;
 }
 
 .book_section .form_container .nice-select .current {
@@ -787,7 +788,7 @@ a:focus {
 }
 
 .client_section .box .detail-box {
-  background-color: #222831;
+  background-color: red;
   color: #ffffff;
   padding: 25px 25px 15px 25px;
   border-radius: 5px;
@@ -851,19 +852,19 @@ a:focus {
 }
 
 .contact_section .form_container input::-webkit-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .contact_section .form_container input:-ms-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .contact_section .form_container input::-ms-input-placeholder {
-  color: #222222;
+  color: red;
 }
 
 .contact_section .form_container input::placeholder {
-  color: #222222;
+  color: red;
 }
 
 .contact_section .form_container input.message-box {
@@ -900,7 +901,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #222831;
+  background-color: red;
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
@@ -1005,3 +1006,129 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* App.css */
+/* تحسينات الـ Header */
+.header_section {
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.header_section.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسينات القائمة */
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px !important;
+  transition: all 0.3s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-icon {
+  font-size: 1.1em;
+}
+
+.nav-label {
+  font-weight: 500;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #ffbe33;
+  transition: width 0.3s ease;
+}
+
+.nav-link.active .active-indicator {
+  width: 80%;
+}
+
+.nav-link:hover {
+  color: #ffbe33 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #ffbe33 !important;
+  font-weight: 600;
+}
+
+/* تحسينات الـ Toggler */
+.navbar-toggler {
+  border: none;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler.active .toggler-icon {
+  background: #ffbe33;
+}
+
+.toggler-icon {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* تحسينات التمرير */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+  position: relative;
+}
+
+/* تحسينات responsive */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    /* background: white; */
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  
+  .nav-link {
+    justify-content: center;
+    padding: 12px !important;
+    border-bottom: 1px solid #f8f9fa;
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+}
+
+/* تحسينات الرسوم المتحركة */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
