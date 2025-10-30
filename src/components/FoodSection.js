@@ -5,15 +5,15 @@ const FoodSection = () => {
   const [activeFilter, setActiveFilter] = useState('*');
 
   const foodItems = [
-    { id: 1, name: "Delicious Pizza", price: "$20", category: "pizza", image: "images/f1.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 2, name: "Delicious Burger", price: "$15", category: "burger", image: "images/f2.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 3, name: "Delicious Pizza", price: "$17", category: "pizza", image: "images/f3.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 4, name: "Delicious Pasta", price: "$18", category: "pasta", image: "images/f4.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 5, name: "French Fries", price: "$10", category: "fries", image: "images/f5.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 6, name: "Delicious Pizza", price: "$15", category: "pizza", image: "images/f6.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 7, name: "Tasty Burger", price: "$12", category: "burger", image: "images/f7.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 8, name: "Tasty Burger", price: "$14", category: "burger", image: "images/f8.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
-    { id: 9, name: "Delicious Pasta", price: "$10", category: "pasta", image: "images/f9.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" }
+    { id: 1, name: "Delicious Pizza", category: "pizza", image: "images/f1.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 2, name: "Delicious Burger", category: "burger", image: "images/f2.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 3, name: "Delicious Pizza", category: "pizza", image: "images/f3.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 4, name: "Delicious Pasta", category: "pasta", image: "images/f4.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 5, name: "French Fries", category: "fries", image: "images/f5.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 6, name: "Delicious Pizza", category: "pizza", image: "images/f6.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 7, name: "Tasty Burger", category: "burger", image: "images/f7.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 8, name: "Tasty Burger", category: "burger", image: "images/f8.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" },
+    { id: 9, name: "Delicious Pasta", category: "pasta", image: "images/f9.png", description: "Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque" }
   ];
 
   const filters = [

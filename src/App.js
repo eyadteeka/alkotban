@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import FoodSection from './components/FoodSection';
 import AboutSection from './components/AboutSection';
-import ClientSection from './components/ClientSection';
 import BookSection from './components/BookSection';
 import Footer from './components/Footer';
 import './App.css';
@@ -41,10 +40,6 @@ const AppContent = () => {
       {/* Booking Section */}
       <section id="book" data-section="book">
         <BookSection />
-      </section>
-      {/* ClientSection Section */}
-      <section id="client" data-section="book">
-        <ClientSection />
       </section>
       {/* Contact Section */}
       <section id="contact" data-section="contact">

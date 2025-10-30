@@ -5,16 +5,16 @@ const Hero = () => {
 
   const slides = [
     {
-      title: "Fast Food Restaurant",
-      description: "Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam."
+      title: "عالم المتعة يبدأ من هنا",
+      description: "اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!"
     },
     {
-      title: "Fast Food Restaurant",
-      description: "Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam."
+      title: "عالم المتعة يبدأ من هنا",
+      description: "اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!"
     },
     {
-      title: "Fast Food Restaurant",
-      description: "Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam."
+      title: "عالم المتعة يبدأ من هنا",
+      description: "اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!"
     }
   ];
 
@@ -83,10 +83,10 @@ const Hero = () => {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      عالم المتعة يبدأ من هنا
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -104,10 +104,10 @@ const Hero = () => {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      عالم المتعة يبدأ من هنا
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -125,10 +125,10 @@ const Hero = () => {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      عالم المتعة يبدأ من هنا
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      اكتشف تشكيلتنا المتنوعة من الألعاب المصممة خصيصا لتمنح أطفالك لحظات مليئة بالمرح والمغامرة!
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
