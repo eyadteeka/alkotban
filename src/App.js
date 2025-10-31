@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import FoodSection from './components/FoodSection';
 import AboutSection from './components/AboutSection';
 import BookSection from './components/BookSection';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -45,6 +46,9 @@ const AppContent = () => {
       <section id="contact" data-section="contact">
         <Footer />
       </section>
+
+      {/* زر واتساب */}
+      <WhatsAppWidget />
     </div>
   );
 };

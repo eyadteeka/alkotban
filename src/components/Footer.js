@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaWhatsapp, FaPhone,FaEnvelope,FaInstagram,FaTwitter,FaFacebook } from 'react-icons/fa';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -12,53 +12,51 @@ const Footer = () => {
               <h4>تواصل معنا</h4>
               <div className="contact_link_box">
                   {/* رقم الوتس ضيف ايقونة وتس  */}
-                <a href="">
-                  <i className="fa fa-phone" aria-hidden="true"></i>
-                  <span>00218928030400</span>
-                </a>
+                <i>
+                  <FaWhatsapp size={22}/>
+                  <span>218928030400+</span>
+                </i>
                 {/* تلفون عادي ضيف ايقونة تلفون */}
-                <a href="">
-                  <i className="fa fa-phone" aria-hidden="true"></i>
-                  <span>00218913270016</span>
-                </a>
-                <a href="">
-                  <i className="fa fa-phone" aria-hidden="true"></i>
-                  <span>00218912143510</span>
-                </a>
+                <i>
+                  <FaPhone size={18}/>
+                  <span>218913270016+</span>
+                </i>
+                <i>
+                  <FaPhone size={18}/>
+                  <span>218912143510+</span>
+                </i>
                 {/* اضافة الايميل */}
-                <a href="">
-                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                <i>
+                  <FaEnvelope size={18}/>
                   <span>demo@gmail.com</span>
-                </a>
+                </i>
               </div>
             </div>
           </div>
           <div className="col-md-4 footer-col">
             <div className="footer_detail">
-              <a href="" className="footer-logo">ALMAISOON</a>
+              <a href="/" className="footer-logo">ALMAISOON</a>
               <p>
 في الميسون، نؤمن أن الترفيه أسلوب حياة، لذلك نعمل باستمرار على تطوير تشكيلتنا وتقديم كل جديد في عالم المرح والمغامرة.              </p>
               <div className="footer_social">
-                <a href=""><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href=""><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href=""><i className="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href=""><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href=""><i className="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href=""><FaFacebook/></a>
+                <a href=""><FaTwitter/></a>
+                <a href=""><FaInstagram/></a>
               </div>
             </div>
           </div>
           <div className="col-md-4 footer-col">
-            <h4>Opening Hours</h4>
-            <p>Everyday</p>
-            <p>10.00 Am -10.00 Pm</p>
+            <h4>ساعات العمل</h4>
+            <p>كل يوم</p>
+            <p>10.00 صباحًا - 10.00 مساءً</p>
           </div>
         </div>
         <div className="footer-info">
           <p>
-            &copy; <span id="displayYear">{currentYear}</span> All Rights Reserved By
-            <a href="https://html.design/"> Free Html Templates</a><br /><br />
+            &copy; <span id="displayYear">{currentYear}</span> جميع الحقوق محفوظة لشركة 
+            <a href="/"> الميسون</a><br /><br />
             &copy; <span id="displayYear">{currentYear}</span> Distributed By
-            <a href="https://themewagon.com/" target="_blank"> ThemeWagon</a>
+            <a href="https://ICode.ly/"> ICode</a>
           </p>
         </div>
       </div>

@@ -93,7 +93,7 @@ const BookSection = () => {
                   />
                 </div>
                 <div className="btn_box">
-                  <button type="submit">Book Now</button>
+                  <button type="submit">طلب الأن</button>
                 </div>
               </form>
             </div>
