@@ -5,8 +5,7 @@ const BookSection = () => {
     name: "",
     phone: "",
     email: "",
-    persons: "",
-    date: "",
+    notes: "",
   });
 
   const handleChange = (e) => {
@@ -26,7 +25,7 @@ const BookSection = () => {
     <section className="book_section layout_padding">
       <div className="container">
         <div className="heading_container">
-          <h2>Book A Table</h2>
+          <h2>تواصل معنا</h2>
         </div>
         <div className="row">
           <div className="col-md-6">
@@ -36,7 +35,7 @@ const BookSection = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Your Name"
+                    placeholder="الإسم"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -47,7 +46,7 @@ const BookSection = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Phone Number"
+                    placeholder="رقم الهاتف"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
@@ -58,7 +57,7 @@ const BookSection = () => {
                   <input
                     type="email"
                     className="form-control"
-                    placeholder="Your Email"
+                    placeholder="البريد الإلكتروني"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -66,34 +65,19 @@ const BookSection = () => {
                   />
                 </div>
                 <div>
-                  <select
-                    className="form-control nice-select wide"
-                    name="persons"
-                    value={formData.persons}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="" disabled>
-                      How many persons?
-                    </option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-                <div>
-                  <input
-                    type="date"
+                  <textarea
+                    type="text"
                     className="form-control"
-                    name="date"
-                    value={formData.date}
+                    placeholder="ملاحظات "
+                    name="notes"
+                    value={formData.notes}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="btn_box">
-                  <button type="submit">طلب الأن</button>
+                  <button type="submit">إرسال</button>
+                  {/* sned the message to the email or whatsapp */}
                 </div>
               </form>
             </div>

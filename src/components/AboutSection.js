@@ -7,7 +7,7 @@ const AboutSection = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="img-box">
-              <img src="images/about-img.png" alt="About Us" />
+              {/* <img src="images/about-img.png" alt="About Us" /> */}
             </div>
           </div>
           <div className="col-md-6">

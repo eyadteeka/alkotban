@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CartIcon from './icons/CartIcon';
 
 const FoodSection = () => {
   const [activeFilter, setActiveFilter] = useState('*');
@@ -32,7 +31,7 @@ const products = [
   return (
     <section className="food_section layout_padding-bottom">
       <div className="container">
-        <div className="heading_container heading_center">
+        <div className="heading_container heading_center pt-5">
           <h2>أبرز منتجاتنا</h2>
         </div>
 
