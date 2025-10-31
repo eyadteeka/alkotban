@@ -35,7 +35,7 @@ const OfferSection = () => {
                     <h6>
                       <span>{offer.discount}</span> {offer.description}
                     </h6>
-                    <a href="">
+                    <a href="/">
                       طلب الأن <CartIcon />
                     </a>
                   </div>

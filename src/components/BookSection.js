@@ -17,9 +17,27 @@ const BookSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Booking data:", formData);
-    // Handle form submission here
+    // Build an email using mailto: so the user's email client sends the review to the target address.
+    const to = "maisoontoys@gmail.com";
+    const subject = `مراجعة جديدة من ${formData.name || 'زائر'}`;
+    const bodyLines = [
+      `الاسم: ${formData.name}`,
+      `رقم الهاتف: ${formData.phone}`,
+      `البريد الإلكتروني: ${formData.email}`,
+      `ملاحظات: ${formData.notes}`,
+    ];
+    const body = bodyLines.join('\r\n');
+    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open user's mail client with prefilled email. Note: this requires a local email client or mailto handling in browser.
+    window.location.href = mailto;
+
+    // Optionally clear the form and show a quick confirmation
+    setFormData({ name: "", phone: "", email: "", notes: "" });
+    setSent(true);
   };
+
+  const [sent, setSent] = useState(false);
 
   return (
     <section className="book_section layout_padding">
@@ -80,16 +98,21 @@ const BookSection = () => {
                   {/* sned the message to the email or whatsapp */}
                 </div>
               </form>
+              {sent && (
+                <p className="text-success" style={{ marginTop: '12px' }}>
+                  تم فتح تطبيق البريد الإلكتروني، أكمل الإرسال لإرسال المراجعة.
+                </p>
+              )}
             </div>
           </div>
           <div className="col-md-6">
             <div className="map_container">
               <Map
                 location={{
-                  latitude: 32.4021803,
-                  longitude: 15.0610619,
-                  name: "Almaisoon",
-                  address: "Downtown Dubai, UAE",
+                  latitude: 32.351465,
+                  longitude: 15.103252,
+                  name: "Almaisoon Toys",
+                  address: "Misurata, Libya",
                 }}
                 zoom={16}
                 mapType={"satellite"} // roadmap, satellite, hybrid, terrain

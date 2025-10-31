@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaWhatsapp, FaPhone,FaEnvelope,FaInstagram,FaTwitter,FaFacebook } from 'react-icons/fa';
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { scrollToSection } = useSmoothScroll();
 
   return (
     <footer className="footer_section">
@@ -11,12 +13,10 @@ const Footer = () => {
             <div className="footer_contact">
               <h4>تواصل معنا</h4>
               <div className="contact_link_box">
-                  {/* رقم الوتس ضيف ايقونة وتس  */}
                 <i>
                   <FaWhatsapp size={22}/>
                   <span>218928030400+</span>
                 </i>
-                {/* تلفون عادي ضيف ايقونة تلفون */}
                 <i>
                   <FaPhone size={18}/>
                   <span>218913270016+</span>
@@ -25,11 +25,13 @@ const Footer = () => {
                   <FaPhone size={18}/>
                   <span>218912143510+</span>
                 </i>
-                {/* اضافة الايميل */}
                 <i>
                   <FaEnvelope size={18}/>
-                  <span>demo@gmail.com</span>
+                  <span>maisoontoys@gmail.com</span>
                 </i>
+                <div className="qr-box" style={{ marginTop: '10px' }}>
+                  <img src="/images/QR-code.jpeg" alt="QR code" style={{ width: '120px', height: 'auto', display: 'block' }} />
+                </div>
               </div>
             </div>
           </div>
@@ -39,16 +41,42 @@ const Footer = () => {
               <p>
 في الميسون، نؤمن أن الترفيه أسلوب حياة، لذلك نعمل باستمرار على تطوير تشكيلتنا وتقديم كل جديد في عالم المرح والمغامرة.              </p>
               <div className="footer_social">
-                <a href=""><FaFacebook/></a>
-                <a href=""><FaTwitter/></a>
-                <a href=""><FaInstagram/></a>
+                <a href="/"><FaFacebook/></a>
+                <a href="/"><FaTwitter/></a>
+                <a href="/"><FaInstagram/></a>
               </div>
             </div>
           </div>
           <div className="col-md-4 footer-col">
-            <h4>ساعات العمل</h4>
-            <p>كل يوم</p>
-            <p>10.00 صباحًا - 10.00 مساءً</p>
+            <div className="footer_nav">
+              <ul className="footer-nav-list">
+                {/* reuse same nav items as header for smooth scrolling */}
+                {[
+                  { id: "home", label: "الرئيسية" },
+                  { id: "menu", label: "قائمة المنتجات" },
+                  { id: "about", label: "من نحن" },
+                  { id: "contact", label: "اتصل بنا" },
+                ].map((item) => (
+                  <li key={item.id} style={{ listStyle: 'none', marginBottom: '6px' }}>
+                    <button
+                      type="button"
+                      className="nav-link footer-link"
+                      onClick={() => {
+                        try {
+                          if (typeof scrollToSection === 'function') scrollToSection(item.id);
+                        } catch (err) {
+                          const el = document.getElementById(item.id);
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      style={{ background: 'none', border: 'none', color: 'inherit', padding: 0, cursor: 'pointer' }}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="footer-info">

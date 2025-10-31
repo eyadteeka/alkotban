@@ -1,9 +1,9 @@
 const Map = ({ 
   location = {
-    latitude: 32.4021803,
-    longitude: 15.0610619,
-    name: "Feane Restaurant",
-    address: "Downtown Dubai, UAE"
+    latitude: 32.351465,
+    longitude: 15.103252,
+    name: "ALMAISOON TOYS",
+    address: "Misurata, Libya"
   },
   zoom = 16,
   mapType = "satellite", // roadmap, satellite, hybrid, terrain

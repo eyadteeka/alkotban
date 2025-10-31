@@ -641,6 +641,7 @@ font-family: 'Tajawal', sans-serif !important;  margin: 10px 0;
 .about_section {
   background: #001d3d;
   color: #ffffff;
+  text-align: right;
 }
 
 .about_section .row {
