@@ -1,13 +1,12 @@
 // components/Header.js
 import React, { useState, useEffect } from "react";
-import { useNavigation } from "../context/NavigationContext";
-import { useSmoothScroll } from "../hooks/useSmoothScroll";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { activeSection } = useNavigation();
-  const { scrollToSection } = useSmoothScroll();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,26 +26,30 @@ const Header = () => {
     setIsNavOpen(false);
   };
 
-  const handleNavClick = (sectionId) => {
-    scrollToSection(sectionId);
+  const handleNavClick = (path) => {
+    navigate(path);
     closeNav();
   };
 
   const navItems = [
-    { id: "home", label: "الرئيسية" },
-    { id: "menu", label: "قائمة المنتجات" },
-    // { id: "book", label: "حجز طاولة" },
-    { id: "about", label: "من نحن" },
-    { id: "contact", label: "اتصل بنا" },
+    { path: "/", label: "الرئيسية" },
+    { path: "/about", label: "من نحن" },
+    { path: "/booking", label: "اتصل بنا" },
+    { path: "/contact", label: "منتجاتنا" },
+
   ];
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className={`header_section ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <nav className="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <span>ALMAISOON</span>
-          </a>
+          </Link>
 
           <button
             className={`navbar-toggler ${isNavOpen ? "active" : ""}`}
@@ -62,12 +65,11 @@ const Header = () => {
           >
             <ul className="navbar-nav mx-auto">
               {navItems.map((item) => (
-                <li key={item.id} className="nav-item">
+                <li key={item.path} className="nav-item">
                   <button
-                    className={`nav-link ${
-                      activeSection === item.id ? "active" : ""
-                    }`}
-                    onClick={() => handleNavClick(item.id)}
+                    className={`nav-link ${isActive(item.path) ? "active" : ""
+                      }`}
+                    onClick={() => handleNavClick(item.path)}
                   >
                     <span className="nav-label">{item.label}</span>
                     <span className="active-indicator"></span>
@@ -79,7 +81,7 @@ const Header = () => {
             <div className="user_option">
               <button
                 className="order_online"
-                onClick={() => handleNavClick("book")}
+                onClick={() => handleNavClick("/booking")}
               >
                 طلب الأن
               </button>

@@ -1,6 +1,7 @@
 * {
   font-family: 'Tajawal', sans-serif !important;
 }
+
 .App {
   text-align: center;
 }
@@ -35,7 +36,256 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Hero Carousel Styles */
+.slider_section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* Background Images Carousel */
+.hero-bg-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(100%) scale(1.1);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  will-change: opacity, transform;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 2;
+}
+
+.hero-bg-slide.prev {
+  transform: translateX(-100%) scale(1.05);
+  z-index: 1;
+}
+
+.hero-bg-slide.next {
+  transform: translateX(100%) scale(1.05);
+  z-index: 1;
+}
+
+/* Ensure smooth transitions for all slides */
+.hero-bg-carousel {
+  overflow: hidden;
+}
+
+/* Semi-transparent Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8));
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Content Wrapper */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+/* Text Animation */
+.detail-box {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.detail-box.transitioning {
+  opacity: 0.5;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffc300 50%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 0.8s ease-out, gradientShift 3s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #ffffff;
+  animation: fadeUp 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+  line-height: 1.6;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Navigation Buttons */
+.hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 195, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #000814;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-nav-btn:hover {
+  background-color: rgba(255, 195, 0, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.hero-nav-prev {
+  right: 20px;
+}
+
+.hero-nav-next {
+  left: 20px;
+}
+
+.hero-nav-btn span {
+  line-height: 1;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .hero-nav-prev {
+    right: 10px;
+  }
+
+  .hero-nav-next {
+    left: 10px;
+  }
+
+  .hero-content-wrapper {
+    padding: 30px 0 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .hero-nav-prev {
+    right: 5px;
+  }
+
+  .hero-nav-next {
+    left: 5px;
   }
 }
