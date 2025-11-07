@@ -34,8 +34,8 @@ const Header = () => {
   const navItems = [
     { path: "/", label: "الرئيسية" },
     { path: "/about", label: "من نحن" },
-    { path: "/booking", label: "اتصل بنا" },
-    { path: "/contact", label: "منتجاتنا" },
+    { path: "/contact-us", label: "اتصل بنا" },
+    { path: "/products", label: "منتجاتنا" },
 
   ];
 

@@ -7,8 +7,8 @@ const WhatsAppWidget = () => {
   const widgetRef = useRef(null);
 
   const config = {
-    phoneNumber: "+218928030400",
-    companyName: "ALMAISOON",
+    phoneNumber: "+218913364768",
+    companyName: "GreenField",
     quickReplies: [
       { text: "📋 قائمة المنتجات", message: "أرغب في رؤية قائمة المنتجات" },
       { text: "📍 الموقع", message: "أين موقع الشركة بالضبط؟" }
@@ -48,7 +48,7 @@ const WhatsAppWidget = () => {
   return (
     <div className="whatsapp-widget" ref={widgetRef}>
       {/* الزر الرئيسي */}
-      <div 
+      <div
         className={`whatsapp-main-button ${isOpen ? 'open' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -71,7 +71,7 @@ const WhatsAppWidget = () => {
                 <span className="status online">● متصل الآن</span>
               </div>
             </div>
-            <button 
+            <button
               className="close-widget-btn"
               onClick={() => setIsOpen(false)}
               aria-label="إغلاق النافذة"

@@ -109,9 +109,9 @@ const BookSection = () => {
             <div className="map_container">
               <Map
                 location={{
-                  latitude: 32.351465,
-                  longitude: 15.103252,
-                  name: "Almaisoon Toys",
+                  latitude: 32.35195716191494,
+                  longitude: 15.069529779849985,
+                  name: "Ben Wafe Group",
                   address: "Misurata, Libya",
                 }}
                 zoom={16}
