@@ -7,19 +7,13 @@ import WhatsAppWidget from '../components/WhatsAppWidget';
 const HomePage = () => {
     return (
         <div className="App">
-            {/* Hero Section */}
-            <section id="home" data-section="home">
-                <div className="hero_area">
-                    <Header />
+            <Header />
+            <main>
+                {/* Hero Section */}
+                <section id="home" data-section="home" className="hero-section">
                     <Hero />
-                </div>
-            </section>
-
-            {/* Menu Section */}
-            {/* <section id="menu" data-section="menu">
-                <FoodSection />
-            </section> */}
-
+                </section>
+            </main>
             <Footer />
             <WhatsAppWidget />
         </div>

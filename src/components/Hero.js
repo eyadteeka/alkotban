@@ -29,8 +29,8 @@ const Hero = () => {
     },
   ];
 
-  const AUTO_PLAY_INTERVAL = 5000; // 5 seconds
-  const PAUSE_DURATION = 8000; // Resume auto-play after 8 seconds
+  const AUTO_PLAY_INTERVAL = 4000; // 5 seconds
+  const PAUSE_DURATION = 5000; // Resume auto-play after 8 seconds
 
   // Auto-rotation function
   useEffect(() => {
@@ -124,87 +124,73 @@ const Hero = () => {
   };
 
   return (
-    <section className="slider_section hero-carousel">
-      <div className="hero-carousel-container">
-        {/* Background Images Carousel */}
-        <div className="hero-bg-carousel">
-          {slides.map((slide, index) => {
-            let slideClass = "hero-bg-slide";
-            if (index === activeIndex) {
-              slideClass += " active";
-            } else if (
-              index === activeIndex - 1 ||
-              (activeIndex === 0 && index === slides.length - 1)
-            ) {
-              slideClass += " prev";
-            } else {
-              slideClass += " next";
-            }
-            return (
-              <div
-                key={index}
-                className={slideClass}
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                }}
-              />
-            );
-          })}
-        </div>
+    <section className="hero-section">
+      <div className="hero_area hero-carousel">
+        <div className="hero-carousel-container">
+          {/* Background Images Carousel */}
+          <div className="hero-bg-carousel">
+            {slides.map((slide, index) => {
+              let slideClass = "hero-bg-slide";
+              if (index === activeIndex) {
+                slideClass += " active";
+              } else if (
+                index === activeIndex - 1 ||
+                (activeIndex === 0 && index === slides.length - 1)
+              ) {
+                slideClass += " prev";
+              } else {
+                slideClass += " next";
+              }
+              return (
+                <div
+                  key={index}
+                  className={slideClass}
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                  }}
+                />
+              );
+            })}
+          </div>
 
-        {/* Semi-transparent overlay */}
-        <div className="hero-overlay"></div>
+          {/* Semi-transparent overlay */}
+          <div className="hero-overlay"></div>
 
-        {/* Content */}
-        <div
-          className="hero-content-wrapper"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-7 col-lg-6">
-                <div className={`detail-box ${isTransitioning ? "transitioning" : ""}`}>
-                  <h1 className="hero-title">
-                    {slides[activeIndex].title}
-                  </h1>
-                  <p className="hero-description">
-                    {slides[activeIndex].description}
-                  </p>
+          {/* Content */}
+          <div
+            className="hero-content-wrapper"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            <div className="container">
+              <div className="row">
+                <div className="col-md-7 col-lg-6">
+                  <div className={`detail-box hero-detail ${isTransitioning ? "transitioning" : ""}`}>
+                    <h1 className="hero-title">
+                      {slides[activeIndex].title}
+                    </h1>
+                    <p className="hero-description">
+                      {slides[activeIndex].description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Manual Navigation Controls */}
-        <button
-          className="hero-nav-btn hero-nav-prev"
-          onClick={prevSlide}
-          aria-label="Previous slide"
-        >
-          <span>‹</span>
-        </button>
-        <button
-          className="hero-nav-btn hero-nav-next"
-          onClick={nextSlide}
-          aria-label="Next slide"
-        >
-          <span>›</span>
-        </button>
-
-        {/* Carousel Indicators */}
-        <div className="container">
-          <ol className="carousel-indicators">
-            {slides.map((_, index) => (
-              <li
-                key={index}
-                className={index === activeIndex ? "active" : ""}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
-          </ol>
+          {/* Carousel Indicators */}
+          <div className="container">
+            <ol className="carousel-indicators">
+              {slides.map((_, index) => (
+                <li
+                  key={index}
+                  className={index === activeIndex ? "active" : ""}
+                  onClick={() => goToSlide(index)}
+                />
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>

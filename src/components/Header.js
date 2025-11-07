@@ -48,7 +48,12 @@ const Header = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg custom_nav-container">
           <Link className="navbar-brand" to="/">
-            <span>ALMAISOON</span>
+            <img
+              // src="/GreenFieldImages/benwafa-logo.jpeg"
+              alt="Greenfield Logo"
+              className="navbar-logo"
+              style={{ height: "100px", objectFit: "contain" }}
+            />
           </Link>
 
           <button
@@ -77,15 +82,6 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-
-            <div className="user_option">
-              <button
-                className="order_online"
-                onClick={() => handleNavClick("/booking")}
-              >
-                طلب الأن
-              </button>
-            </div>
           </div>
         </nav>
       </div>
