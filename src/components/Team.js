@@ -8,12 +8,6 @@ const TeamMember = ({ image, name, designation, delay }) => {
           <img className="img-fluid" src={image} alt={name} />
         </div>
         <h5 className="mb-0">{name}</h5>
-        <small>{designation}</small>
-        <div className="d-flex justify-content-center mt-3">
-          <a className="btn btn-square btn-primary mx-1" href=""><i className="fab fa-facebook-f"></i></a>
-          <a className="btn btn-square btn-primary mx-1" href=""><i className="fab fa-twitter"></i></a>
-          <a className="btn btn-square btn-primary mx-1" href=""><i className="fab fa-instagram"></i></a>
-        </div>
       </div>
     </div>
   );
@@ -22,25 +16,25 @@ const TeamMember = ({ image, name, designation, delay }) => {
 const Team = () => {
   const teamMembers = [
     {
-      image: "img/team-1.jpg",
+      image: "img/about-1.png",
       name: "Full Name",
       designation: "Designation",
       delay: "0.1s"
     },
     {
-      image: "img/team-2.jpg",
+      image: "img/about-1.png",
       name: "Full Name",
       designation: "Designation",
       delay: "0.3s"
     },
     {
-      image: "img/team-3.jpg",
+      image: "img/about-1.png",
       name: "Full Name",
       designation: "Designation",
       delay: "0.5s"
     },
     {
-      image: "img/team-4.jpg",
+      image: "img/about-1.png",
       name: "Full Name",
       designation: "Designation",
       delay: "0.7s"
@@ -51,8 +45,7 @@ const Team = () => {
     <div className="container-xxl pt-5 pb-3">
       <div className="container">
         <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h5 className="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-          <h1 className="mb-5">Our Master Chefs</h1>
+          <h2 className="section-title ff-secondary text-center text-primary fw-normal mb-5">منتجاتنا</h2>
         </div>
         <div className="row g-4">
           {teamMembers.map((member, index) => (

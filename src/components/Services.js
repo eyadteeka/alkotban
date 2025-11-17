@@ -7,7 +7,6 @@ const ServiceItem = ({ delay, icon, title, description }) => {
         <div className="p-4">
           <i className={`fa fa-3x ${icon} text-primary mb-4`}></i>
           <h5>{title}</h5>
-          <p>{description}</p>
         </div>
       </div>
     </div>
@@ -18,33 +17,32 @@ const Services = () => {
   const services = [
     {
       delay: "0.1s",
-      icon: "fa-user-tie",
-      title: "Master Chefs",
-      description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
+      icon: "fa-medal",
+      title: "منتجات معتمدة بجودة عالمية",
     },
     {
       delay: "0.3s",
       icon: "fa-utensils",
-      title: "Quality Food",
-      description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
+      title: "خبرة في السوق الزراعي الليبي",
     },
     {
       delay: "0.5s",
       icon: "fa-cart-plus",
-      title: "Online Order",
-      description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
+      title: "دعم فني وإرشادات للمزارعين",
     },
     {
       delay: "0.7s",
       icon: "fa-headset",
-      title: "24/7 Service",
-      description: "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
+      title: "توفير مستمر وتوريد سريع",
     }
   ];
 
   return (
     <div className="container-xxl py-5">
       <div className="container">
+        <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h2 className="section-title ff-secondary text-center text-primary fw-normal mb-5">لماذا نحن؟</h2>
+        </div>
         <div className="row g-4">
           {services.map((service, index) => (
             <ServiceItem key={index} {...service} />
