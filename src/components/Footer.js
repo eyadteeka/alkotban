@@ -1,71 +1,87 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaWhatsapp, FaPhone, FaEnvelope, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import React, { useState } from 'react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    // Handle newsletter subscription
+    console.log('Newsletter subscription:', email);
+    setEmail('');
+  };
 
   return (
-    <footer className="footer_section">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4 footer-col">
-            <div className="footer_contact">
-              <h4>تواصل معنا</h4>
-              <div className="contact_link_box">
-                <i>
-                  <FaWhatsapp size={22} />
-                  <span>+218913364768</span>
-                </i>
-              </div>
+    <div className="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div className="container py-5">
+        <div className="row g-5">
+          <div className="col-lg-3 col-md-6">
+            <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+            <a className="btn btn-link" href="">About Us</a>
+            <a className="btn btn-link" href="">Contact Us</a>
+            <a className="btn btn-link" href="">Reservation</a>
+            <a className="btn btn-link" href="">Privacy Policy</a>
+            <a className="btn btn-link" href="">Terms & Condition</a>
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+            <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+            <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+            <p className="mb-2"><i className="fa fa-envelope me-3"></i>info@example.com</p>
+            <div className="d-flex pt-2">
+              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-twitter"></i></a>
+              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>
+              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-youtube"></i></a>
+              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-          <div className="col-md-4 footer-col">
-            <div className="footer_detail">
-              <Link to="/" className="footer-logo">GreenField</Link>
-              <p>© 2025 Green Field Agricultural Supplies. All rights reserved.
-                We provide high-quality agricultural equipment and smart solutions to help farmers achieve better productivity.</p>
-              <div className="footer_social">
-                <a href="/"><FaFacebook /></a>
-                <a href="/"><FaTwitter /></a>
-                <a href="/"><FaInstagram /></a>
-              </div>
+          <div className="col-lg-3 col-md-6">
+            <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+            <h5 className="text-light fw-normal">Monday - Saturday</h5>
+            <p>09AM - 09PM</p>
+            <h5 className="text-light fw-normal">Sunday</h5>
+            <p>10AM - 08PM</p>
+          </div>
+          <div className="col-lg-3 col-md-6">
+            <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+            <div className="position-relative mx-auto" style={{maxWidth: '400px'}}>
+              <form onSubmit={handleNewsletterSubmit}>
+                <input 
+                  className="form-control border-primary w-100 py-3 ps-4 pe-5" 
+                  type="email" 
+                  placeholder="Your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <button type="submit" className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+              </form>
             </div>
           </div>
-          <div className="col-md-4 footer-col">
-            <div className="footer_nav">
-              <ul className="footer-nav-list">
-                {[
-                  { path: "/", label: "الرئيسية" },
-                  { path: "/about", label: "من نحن" },
-                  { path: "/contact", label: "اتصل بنا" },
-                ].map((item) => (
-                  <li key={item.path} style={{ listStyle: 'none', marginBottom: '6px' }}>
-                    <button
-                      type="button"
-                      className="nav-link footer-link"
-                      onClick={() => navigate(item.path)}
-                      style={{ background: 'none', border: 'none', color: 'inherit', padding: 0, cursor: 'pointer' }}
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="footer-info">
-          <p>
-            &copy; <span id="displayYear">{currentYear}</span> جميع الحقوق محفوظة لمجموعة
-            <Link to="/"> بن وفاء الزراعية</Link><br /><br />
-            &copy; <span id="displayYear">{currentYear}</span> Distributed By
-            <a href="https://ICode.ly/"> ICode</a>
-          </p>
         </div>
       </div>
-    </footer>
+      <div className="container">
+        <div className="copyright">
+          <div className="row">
+            <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a className="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+              <br /><br />
+              Designed By <a className="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+              <br />
+              Distributed By <a className="border-bottom" href="https://themewagon.com" target="_blank" rel="noopener noreferrer">ThemeWagon</a>
+            </div>
+            <div className="col-md-6 text-center text-md-end">
+              <div className="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,199 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 const Hero = () => {
-  const navigate = useNavigate();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  const autoPlayRef = useRef(null);
-  const pauseTimeoutRef = useRef(null);
-
-  // Easily editable slides array with images, titles, and descriptions
-  const slides = [
-    {
-      image: "GreenFieldImages/field.jpeg",
-      title: "حقل المزرعة",
-      description: "حقل المزرعة الذي يحتوي على مزرعة كبيرة ومتنوعة من المحاصيل والحيوانات.",
-    },
-    {
-      image: "GreenFieldImages/farmer.jpeg", // Replace with your second image
-      title: "المزرعة",
-      description: "اكتشف المزرعة الذي يحتوي على مزرعة كبيرة ومتنوعة من المحاصيل والحيوانات.",
-    },
-    {
-      image: "GreenFieldImages/green-space.jpeg", // Replace with your third image
-      title: "المساحة الخضراء",
-      description: "اكتشف المساحة الخضراء الذي يحتوي على مساحة كبيرة ومتنوعة من النباتات والأشجار.",
-    },
-  ];
-
-  const AUTO_PLAY_INTERVAL = 4000; // 5 seconds
-  const PAUSE_DURATION = 5000; // Resume auto-play after 8 seconds
-
-  // Auto-rotation function
-  useEffect(() => {
-    const startAutoPlay = () => {
-      autoPlayRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % slides.length);
-      }, AUTO_PLAY_INTERVAL);
-    };
-
-    startAutoPlay();
-
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
-      }
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current);
-      }
-    };
-  }, [slides.length]);
-
-  // Handle transition animation
-  useEffect(() => {
-    setIsTransitioning(true);
-    const timer = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 1200); // Match CSS transition duration
-
-    return () => clearTimeout(timer);
-  }, [activeIndex]);
-
-  // Pause auto-rotation temporarily
-  const pauseAutoPlay = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      autoPlayRef.current = null;
-    }
-
-    // Clear any existing pause timeout
-    if (pauseTimeoutRef.current) {
-      clearTimeout(pauseTimeoutRef.current);
-    }
-
-    // Resume auto-play after delay
-    pauseTimeoutRef.current = setTimeout(() => {
-      autoPlayRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % slides.length);
-      }, AUTO_PLAY_INTERVAL);
-    }, PAUSE_DURATION);
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % slides.length);
-    pauseAutoPlay();
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
-    pauseAutoPlay();
-  };
-
-  const goToSlide = (index) => {
-    setActiveIndex(index);
-    pauseAutoPlay();
-  };
-
-  // Touch handlers for swipe support
-  const minSwipeDistance = 50;
-
-  const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
-    }
-  };
-
   return (
-    <section className="hero-section">
-      <div className="hero_area hero-carousel">
-        <div className="hero-carousel-container">
-          {/* Background Images Carousel */}
-          <div className="hero-bg-carousel">
-            {slides.map((slide, index) => {
-              let slideClass = "hero-bg-slide";
-              if (index === activeIndex) {
-                slideClass += " active";
-              } else if (
-                index === activeIndex - 1 ||
-                (activeIndex === 0 && index === slides.length - 1)
-              ) {
-                slideClass += " prev";
-              } else {
-                slideClass += " next";
-              }
-              return (
-                <div
-                  key={index}
-                  className={slideClass}
-                  style={{
-                    backgroundImage: `url(${slide.image})`,
-                  }}
-                />
-              );
-            })}
-          </div>
-
-          {/* Semi-transparent overlay */}
-          <div className="hero-overlay"></div>
-
-          {/* Content */}
-          <div
-            className="hero-content-wrapper"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-md-7 col-lg-6">
-                  <div className={`detail-box hero-detail ${isTransitioning ? "transitioning" : ""}`}>
-                    <h1 className="hero-title">
-                      {slides[activeIndex].title}
-                    </h1>
-                    <p className="hero-description">
-                      {slides[activeIndex].description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <div className="container-xxl position-relative p-0">
+      <div className="container-xxl py-5 bg-dark hero-header mb-5">
+        <div className="container my-5 py-5">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6 text-center text-lg-start">
+              <h1 className="display-3 text-white animated slideInLeft">Enjoy Our<br />Delicious Meal</h1>
+              <p className="text-white animated slideInLeft mb-4 pb-2">
+                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. 
+                Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+              </p>
+              <a href="" className="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
             </div>
-          </div>
-
-          {/* Carousel Indicators */}
-          <div className="container">
-            <ol className="carousel-indicators">
-              {slides.map((_, index) => (
-                <li
-                  key={index}
-                  className={index === activeIndex ? "active" : ""}
-                  onClick={() => goToSlide(index)}
-                />
-              ))}
-            </ol>
+            <div className="col-lg-6 text-center text-lg-end overflow-hidden">
+              <img className="img-fluid" src="img/hero.png" alt="Hero" />
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

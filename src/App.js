@@ -2,24 +2,42 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavigationProvider } from './context/NavigationContext';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import './App.css';
-import ProductsPage from './pages/ProductsPage';
+import Spinner from './components/Spinner';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import About from './components/About';
+import Menu from './components/Menu';
+import Reservation from './components/Reservation';
+import Team from './components/Team';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
+
 
 function App() {
   return (
-    <Router>
-      <NavigationProvider>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact-us" element={<ContactPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-        </Routes>
-      </NavigationProvider>
-    </Router>
+    // <Router>
+      
+    //   <NavigationProvider>
+    //     <Routes>
+
+    //     </Routes>
+    //   </NavigationProvider>
+    // </Router>
+        <div className="App">
+      {/* <Spinner /> */}
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <Menu />
+      <Reservation />
+      <Team />
+      <Testimonials />
+      <Footer />
+      <BackToTop />
+    </div>
   );
 }
 
