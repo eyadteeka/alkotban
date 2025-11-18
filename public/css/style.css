@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: rgb(120, 245, 120);
+    --primary: #3a5a40;
     --light: #F1F8FF;
-    --dark: #0F172B;
+    --dark: #16240e;
 }
 
 .ff-secondary {
