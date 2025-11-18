@@ -1,7 +1,10 @@
 import React from 'react';
 import Counter from './counter';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="container-xxl py-5">
       <div className="container">
@@ -23,13 +26,13 @@ const About = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <h5 className="section-title ff-secondary text-start text-primary fw-normal">حول الشركة</h5>
-            <h1 className="mb-4">مرحباً بكم في شركة الحقل الأخضر</h1>
+            <h5 className="section-title ff-secondary text-start text-primary fw-normal">{t('about_section_title')}</h5>
+            <h1 className="mb-4">{t('about_heading')}</h1>
             <p className="mb-4">
-              شركة الحقل الأخضر هي شركة ليبية تأسست عام 2002، متخصصة في استيراد وتوزيع الأسمدة والبذور والمبيدات ومستلزمات الري من شركات عالمية موثوقة. نركز على تقديم منتجات عالية الجودة تناسب التربة الليبية وتلبي احتياجات المزارعين
+              {t('about_paragraph_one')}
             </p>
             <p className="mb-4">
-              خلال مسيرتنا، ركّزنا على تقديم منتجات تساعد المزارعين على العمل بكفاءة أكبر وتحقيق نتائج أفضل في محاصيلهم. نعمل باستمرار على توسيع مجموعة منتجاتنا لضمان تلبية احتياجات المزارع الليبي في مختلف المواسم
+              {t('about_paragraph_two')}
             </p>
             <div className="row g-4 mb-4">
               <div className="col-sm-6">
@@ -46,8 +49,8 @@ const About = () => {
                     />
                   </h1>
                   <div className="ps-4">
-                    <p className="mb-0">خبرة</p>
-                    <h6 className="text-uppercase mb-0">سنة</h6>
+                    <p className="mb-0">{t('about_experience_label')}</p>
+                    <h6 className="text-uppercase mb-0">{t('about_experience_years')}</h6>
                   </div>
                 </div>
               </div>
