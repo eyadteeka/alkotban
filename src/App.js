@@ -14,6 +14,8 @@ import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import PartnerSection from "./components/Partners";
+import VerticalStepper from "./components/VerticalStepper";
 function App() {
   return (
     // <Router>
@@ -28,15 +30,17 @@ function App() {
       {/* <Spinner /> */}
       <Navbar />
       <Hero />
-      <Services />
       <About />
-      <Menu />
-      <Reservation />
+      <Services />
+      <VerticalStepper />
       <Team />
-      <Testimonials />
+      {/* <Menu /> */}
+      <PartnerSection />
+      <Reservation />
+      {/* <Testimonials /> */}
       <Footer />
       <BackToTop />
-            {/* زر واتساب */}
+      {/* زر واتساب */}
       <WhatsAppWidget />
     </div>
   );
