@@ -68,7 +68,7 @@ const Reservation = () => {
                     <Icon className="contact-details-icon text-primary" />
                     <div>
                       <span className="contact-details-label">{label}</span>
-                      <a href={href} target="_blank" rel="noreferrer" className="contact-details-link">
+                      <a href={href} target="_blank" rel="noreferrer" className="contact-details-link p-ltr">
                         {value}
                       </a>
                     </div>

@@ -23,14 +23,21 @@ function App() {
     //   </NavigationProvider>
     // </Router>
     <div className="App">
+      
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <VerticalStepper />
-      <Team />
-      <PartnerSection />
-      <Reservation />
+      <section id="home" data-section="home"><Hero /></section>
+      
+      <section id="about" data-section="about"><About /></section>
+      <section id="our_values" data-section="our_values"><Services /></section>
+      
+      <section id="why_us" data-section="why_us"><VerticalStepper /></section>
+      
+      
+      <section id="products" data-section="products"><Team /></section>
+      <section id="partners" data-section="partners"><PartnerSection /></section>
+      
+      <section id="contact" data-section="contact"><Reservation /></section>
+      
       <Footer />
       <BackToTop />
       <WhatsAppWidget />

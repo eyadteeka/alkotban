@@ -7,6 +7,7 @@
     display: flex;
     overflow: hidden;
     line-height: 1;
+    flex-direction: row;
 }
 
 .counter-digit {
@@ -39,4 +40,46 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+/* دعم RTL */
+[dir="rtl"] .counter-container {
+    text-align: right;
+}
+
+[dir="rtl"] .counter-counter {
+    flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .counter-digit {
+    direction: ltr; /* الحفاظ على اتجاه الأرقام */
+}
+
+[dir="rtl"] .counter-number {
+    direction: ltr; /* الحفاظ على اتجاه الأرقام */
+}
+
+.counter-text {
+    direction: ltr; /* الحفاظ على اتجاه الأرقام في النص */
+}
+
+[dir="rtl"] .counter-formatted-value {
+    text-align: right;
+    direction: rtl;
+}
+
+/* تحسينات للعربية */
+[lang="ar"] .counter-digit {
+    font-feature-settings: "tnum";
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    .counter-container {
+        text-align: center;
+    }
+    
+    [dir="rtl"] .counter-container {
+        text-align: center;
+    }
 }
