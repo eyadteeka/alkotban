@@ -12,7 +12,7 @@ const Navbar = () => {
           <img
             className="img-fluid"
             style={{ paddingLeft: "10px", paddingRight: "10px" }}
-            src="img/Co-logos/atilalbg.png"
+            src="img/Co-logos/greenfield-fav.png"
             alt={t("navbar_logo_alt")}
           />
           {t("navbar_brand_name")}

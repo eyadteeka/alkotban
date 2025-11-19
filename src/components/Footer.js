@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +16,9 @@ const Footer = () => {
   };
 
   const { t } = useTranslation();
+  const socialLinks = [
+    { icon: faFacebookF, link: "https://www.facebook.com/green.field.company1/" },
+  ];
 
   return (
     <div className="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -22,10 +29,11 @@ const Footer = () => {
               {t('footer_company_heading')}
             </h4>
             <a className="btn btn-link" href="">{t('footer_link_about')}</a>
+            <a className="btn btn-link" href="">{t('footer_link_our_values')}</a>
             <a className="btn btn-link" href="">{t('footer_link_why_us')}</a>
+            <a className="btn btn-link" href="">{t('footer_link_products')}</a>
             <a className="btn btn-link" href="">{t('footer_link_partners')}</a>
             <a className="btn btn-link" href="">{t('footer_link_contact')}</a>
-            <a className="btn btn-link" href="">{t('footer_link_products')}</a>
           </div>
           <div className="col-lg-4 col-md-6">
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">
@@ -35,20 +43,25 @@ const Footer = () => {
             <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>{t('footer_phone')}</p>
             <p className="mb-2"><i className="fa fa-envelope me-3"></i>{t('footer_email')}</p>
             <div className="d-flex pt-2">
-              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-twitter"></i></a>
-              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>
-              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-youtube"></i></a>
-              <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-linkedin-in"></i></a>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  className="btn btn-square btn-primary rounded-circle me-2"
+                  href={social.link}
+                >
+                  <FontAwesomeIcon icon={social.icon} />
+                </a>
+              ))}
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">
               {t('footer_opening_heading')}
             </h4>
-            <h5 className="text-light fw-normal">{t('footer_opening_weekdays')}</h5>
-            <p>{t('footer_opening_weekdays_hours')}</p>
-            <h5 className="text-light fw-normal">{t('footer_opening_weekend')}</h5>
-            <p>{t('footer_opening_weekend_hours')}</p>
+            <h5 className="text-light fw-normal">{t('saturday_thursday')}</h5>
+            <p>{t('time_8_6')}</p>
+            <h5 className="text-light fw-normal">{t('friday')}</h5>
+            <p>{t('closed')}</p>
           </div>
         </div>
       </div>

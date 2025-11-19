@@ -20,9 +20,9 @@ const PartnerSection = () => {
             <div className="container-fluid my-5">
                 <div className="container py-5">
                     <div className="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: '700px' }}>
-                        <div className="section-title text-center">
+                        <div className="section-title  text-center">
                             <p className="fs-5 fw-medium fst-italic">{t('our_partners')}</p>
-                            <h1 className="fw-bold mb-3">{t('trusted_companies')}</h1>
+                            <h1 className="fw-bold mb-3 text-secondary">{t('trusted_companies')}</h1>
                             <h6 className="fw-normal lh-base">
                                 {t('partners_description')}
                             </h6>

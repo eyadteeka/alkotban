@@ -26,7 +26,7 @@ const About = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <h5 className="section-title ff-secondary text-start text-primary fw-normal">{t('about_section_title')}</h5>
+            <h5 className="section-title ff-secondary text-start text-secondary fw-normal">{t('about_section_title')}</h5>
             <h1 className="mb-4">{t('about_heading')}</h1>
             <p className="mb-4">
               {t('about_paragraph_one')}
@@ -37,7 +37,7 @@ const About = () => {
             <div className="row g-4 mb-4">
               <div className="col-sm-6">
                 <div className="d-flex align-items-center border-start border-5 border-primary px-3">
-                  <h1 className="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">
+                  <h1 className="flex-shrink-0 display-5 text-secondary mb-0" data-toggle="counter-up">
                     <Counter
                       value={13}
                       places={[10, 1]}

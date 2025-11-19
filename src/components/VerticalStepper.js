@@ -48,7 +48,7 @@ const VerticalStepper = ({ isRTL = true }) => {
     return (
         <section className="vertical-stepper-section">
             <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h2 className="section-title ff-secondary text-center text-primary fw-normal mb-5">
+                <h2 className="section-title ff-secondary text-center text-secondary fw-normal mb-5">
                     {t('vertical_step_heading')}
                 </h2>
             </div>
@@ -65,7 +65,7 @@ const VerticalStepper = ({ isRTL = true }) => {
                             <div className="vertical-step-content">
                                 <h3>
                                     {t(step.titleKey)}
-                                    <span className="vertical-feature-highlight">{t(step.highlightKey)}</span>
+                                    <span className="vertical-feature-highlight text-secondary">{t(step.highlightKey)}</span>
                                 </h3>
                                 <p>{t(step.descriptionKey)}</p>
                             </div>

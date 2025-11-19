@@ -6,14 +6,14 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'ar' : 'en';
     i18n.changeLanguage(newLang);
-        document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = i18n.language;
   };
 
   return (
     <button
       onClick={toggleLanguage}
-      className="btn btn-outline-primary btn-sm"
+      className="btn btn-sm btn-warning"
     >
       {i18n.language === 'en' ? 'العربية' : 'English'}
     </button>
