@@ -36,7 +36,8 @@ const Footer = () => {
               {t('footer_contact_heading')}
             </h4>
             <p className="mb-2"><FontAwesomeIcon icon={faMapMarkerAlt} className="me-fa" />{t('footer_address')}</p>
-            <p className="mb-2"><FontAwesomeIcon icon={faPhoneAlt} className="me-fa" />{t('footer_phone')}</p>
+            <p className="mb-2"><FontAwesomeIcon icon={faPhoneAlt} className="me-fa" dir="ltr" />  <bdo dir="ltr">+218 91-8889391</bdo>
+            </p>
             <p className="mb-2"><FontAwesomeIcon icon={faEnvelope} className="me-fa" />{t('footer_email')}</p>
             <div className="d-flex pt-2">
               {socialLinks.map((social, index) => (

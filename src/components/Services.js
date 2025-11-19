@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaMedal, FaUtensils, FaCartPlus, FaHeadset } from 'react-icons/fa';
+import { FaMedal, FaUtensils, FaCartPlus, FaHeadset, FaEye, FaAward, FaHistory } from 'react-icons/fa';
 
 const ServiceItem = ({ delay, Icon, title }) => {
   return (
@@ -21,22 +21,22 @@ const Services = () => {
   const services = [
     {
       delay: "0.1s",
-      Icon: FaMedal,
+      Icon: FaAward,
       titleKey: "services_quality",
     },
     {
       delay: "0.3s",
-      Icon: FaUtensils,
+      Icon: FaEye,
       titleKey: "services_transparency",
     },
     {
       delay: "0.5s",
-      Icon: FaCartPlus,
+      Icon: FaHeadset,
       titleKey: "services_customer_care",
     },
     {
       delay: "0.7s",
-      Icon: FaHeadset,
+      Icon: FaHistory,
       titleKey: "services_long_term",
     }
   ];

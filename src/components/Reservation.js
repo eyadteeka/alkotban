@@ -36,13 +36,13 @@ const Reservation = () => {
     {
       Icon: FaPhoneAlt,
       label: t('contact_phone_label'),
-      value: t('contact_phone_value'),
+      value: <bdo dir="ltr">+218 91-8889391</bdo>,
       href: 'tel:+218918889391'
     },
     {
       Icon: FaWhatsapp,
       label: t('contact_whatsapp_label'),
-      value: t('contact_whatsapp_value'),
+      value: <bdo dir="ltr">+218 91-8889391</bdo>,
       href: 'https://wa.me/218918889391'
     }
   ];
