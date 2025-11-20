@@ -46,14 +46,7 @@ const Navbar = () => {
             aria-label="Change language"
           >
             <FontAwesomeIcon icon={faGlobe} className="text-primary" />
-                    <button
-            className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+
           </button>
           {isLanguageMenuOpen && (
             <div className="mobile-language-dropdown">

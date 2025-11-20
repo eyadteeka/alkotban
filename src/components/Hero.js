@@ -17,7 +17,7 @@ const Hero = () => {
               {/* <a href="" className="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">تواصل معنا</a> */}
             </div>
             <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-              <img className="img-fluid" src="img/Co-logos/atilalbg.png" alt="Hero" />
+              <img className="img-fluid" src="logo512.png" alt="Hero" />
             </div>
           </div>
         </div>
