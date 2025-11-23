@@ -24,12 +24,12 @@ const Footer = () => {
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">
               {t('footer_company_heading')}
             </h4>
-            <a className="btn btn-link" href="#about">{t('footer_link_about')}</a>
-            <a className="btn btn-link" href="#our_values">{t('footer_link_our_values')}</a>
-            <a className="btn btn-link" href="#why_us">{t('footer_link_why_us')}</a>
-            <a className="btn btn-link" href="#products">{t('footer_link_products')}</a>
-            <a className="btn btn-link" href="#partners">{t('footer_link_partners')}</a>
-            <a className="btn btn-link" href="#contact">{t('footer_link_contact')}</a>
+            <a className="btn btn-link" href="/#about">{t('footer_link_about')}</a>
+            <a className="btn btn-link" href="/#our_values">{t('footer_link_our_values')}</a>
+            <a className="btn btn-link" href="/#why_us">{t('footer_link_why_us')}</a>
+            <a className="btn btn-link" href="/products">{t('footer_link_products')}</a>
+            <a className="btn btn-link" href="/#partners">{t('footer_link_partners')}</a>
+            <a className="btn btn-link" href="/#contact">{t('footer_link_contact')}</a>
           </div>
           <div className="col-lg-4 col-md-6">
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">

@@ -852,3 +852,27 @@ body {
   background: transparent;
   z-index: 1001;
 }
+.filters_menu {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  margin: 45px 0 20px 0;
+}
+
+.filters_menu li {
+  padding: 7px 25px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.filters_menu li.active {
+  background-color: var(--primary) !important;
+  color: var(--secondary) !important;
+}

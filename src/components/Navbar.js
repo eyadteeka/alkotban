@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-const Navbar = () => {
+import { Link } from 'react-router-dom';
+const Navbar = ({style}) => {
   const { t, i18n } = useTranslation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
@@ -24,9 +24,9 @@ const Navbar = () => {
     setIsLanguageMenuOpen(false);
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0 ' style={{...style}}>
       <div style={{ display: "flex" }}>
-        <a href="" className="navbar-brand p-0">
+        <a href="/" className="navbar-brand p-0">
           <h5 className="text-primary m-0">
             <img
               className="img-fluid"
@@ -82,19 +82,16 @@ const Navbar = () => {
 
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <div className="navbar-nav py-0 pe-4">
-          <a href="#home" className="nav-item nav-link active">
+          <a href="/" className="nav-item nav-link active">
             {t("nav_home")}
           </a>
-          <a href="#about" className="nav-item nav-link">
+          <a href="/#about" className="nav-item nav-link">
             {t("nav_about")}
           </a>
-          {/* <a href="#service" className="nav-item nav-link">
-            {t("nav_services")}
-          </a> */}
-          <a href="#products" className="nav-item nav-link">
+          <Link  to="/products" className="nav-item nav-link">
             {t("nav_menu")}
-          </a>
-          <a href="#contact" className="nav-item nav-link">
+          </Link >
+          <a href="/#contact" className="nav-item nav-link">
             {t("nav_contact")}
           </a>
         </div>
