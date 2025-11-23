@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import React, { useState } from "react";
-const ProductMember = ({ image, name, designation, delay }) => {
+import { useState } from "react";
+const ProductMember = ({ image, name, designation }) => {
   return (
-    <div className={`col-lg-3 col-md-6 wow fadeInUp`} data-wow-delay={delay}>
+    <div className={`col-lg-3 col-md-6 wow`}>
       <div className="team-item text-center rounded overflow-hidden">
         <div className="rounded-circle overflow-hidden m-4">
           <img className="img-fluid" src={image} alt={name} />
@@ -17,45 +17,74 @@ const ProductMember = ({ image, name, designation, delay }) => {
 const Products = () => {
   const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("*");
-  const teamMembers = [
+
+  const Products = [
     {
-      image: "img/about-1.png",
+      id: 1,
+      image: "img/Products/p1.jpg",
       nameKey: "team_member_one_name",
       designationKey: "team_member_one_role",
-      delay: "0.1s",
+      category: "fertilizers",
     },
     {
-      image: "img/about-1.png",
+      id: 2,
+      image: "img/Products/p2.jpg",
       nameKey: "team_member_two_name",
       designationKey: "team_member_two_role",
-      delay: "0.3s",
+      category: "seeds",
     },
     {
-      image: "img/about-1.png",
+      id: 3,
+      image: "img/Products/p3.jpg",
       nameKey: "team_member_three_name",
       designationKey: "team_member_three_role",
-      delay: "0.5s",
+      category: "seeds",
     },
     {
-      image: "img/about-1.png",
+      id: 4,
+      image: "img/Products/p4.jpg",
       nameKey: "team_member_four_name",
       designationKey: "team_member_four_role",
-      delay: "0.7s",
+      category: "materials",
+    },
+    {
+      id: 5,
+      image: "img/Products/p5.jpg",
+      nameKey: "team_member_four_name",
+      designationKey: "team_member_four_role",
+      category: "materials",
+    },
+    {
+      id: 6,
+      image: "img/Products/p6.jpg",
+      nameKey: "team_member_four_name",
+      designationKey: "team_member_four_role",
+      category: "materials",
+    },
+    {
+      id: 7,
+      image: "img/Products/p7.jpg",
+      nameKey: "team_member_four_name",
+      designationKey: "team_member_four_role",
+      category: "materials",
     },
   ];
   const filters = [
     { key: "*", label: "الكل" },
-    { key: "Skate shoes", label: "تزلج" },
-    { key: "bikes", label: "دراجات" },
-    { key: "bicycle", label: "دراجات هوائية" },
-    { key: "scooter", label: "سكوترات" },
-    { key: "indoor", label: "ألعاب داخلية" },
-    { key: "outdoor", label: "ألعاب خارجية" },
+    { key: "fertilizers", label: "أسمدة" },
+    { key: "seeds", label: "بذور" },
+    { key: "materials", label: "مبيدات و مستلزمات زراعية" },
   ];
+
+    const filteredItems =
+    activeFilter === "*"
+      ? Products
+      : Products.filter((item) => item.category === activeFilter);
+
   return (
     <div className="container-xxl pt-5 pb-3" style={{ marginTop: "80px" }}>
       <div className="container">
-        <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <div className="text-center wow">
           <h2 className="section-title ff-secondary text-center text-secondary fw-normal mb-5">
             {t("team_section_title")}
           </h2>
@@ -71,15 +100,15 @@ const Products = () => {
             </li>
           ))}
         </ul>
+
         <div className="filters-content">
         <div className="row grid">
-          {teamMembers.map((member, index) => (
+          {filteredItems.map((item) => (
             <ProductMember
-              key={index}
-              image={member.image}
-              name={t(member.nameKey)}
-              designation={t(member.designationKey)}
-              delay={member.delay}
+              key={item.id}
+              image={item.image}
+              name={t(item.nameKey)}
+              designation={t(item.designationKey)}
             />
           ))}
         </div>
