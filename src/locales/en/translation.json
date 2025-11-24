@@ -63,14 +63,47 @@
   "vertical_step_four_description": "We ensure a steady supply chain with quick delivery across Libya so your operations never stop.",
   "vertical_step_image_alt": "Green Field vertical feature illustration",
   "team_section_title": "Our Products",
-  "team_member_one_name": "Seed Solutions",
-  "team_member_one_role": "Premium seed varieties",
-  "team_member_two_name": "Fertilizer Experts",
-  "team_member_two_role": "Balanced NPK blends",
-  "team_member_three_name": "Crop Protection",
-  "team_member_three_role": "Certified pesticides",
-  "team_member_four_name": "Irrigation Support",
-  "team_member_four_role": "Efficient irrigation tools",
+  "product_vegetable_seeds_clause": "Vegetable Seeds (Clause)",
+  "product_vegetable_seeds_clause_desc": "Diverse selections of high-quality seeds that meet all your farm's needs. Discover European innovation and quality in every seed, ensuring the best crops and high productivity with Clause's globally distinguished varieties.",
+  
+  "product_alfalfa_seeds_sw": "Alfalfa Seeds S&W",
+  "product_alfalfa_seeds_sw_desc": "High-quality Imperial alfalfa seeds from American S&W, withstand various conditions and ensure abundant, healthy yields with increased agricultural productivity.",
+  
+  "product_alfalfa_three_cows": "Alfalfa Seeds (Three Cows)",
+  "product_alfalfa_three_cows_desc": "Original American alfalfa seeds (Three Cows) from AlfaGen Company - high quality and efficiency for your farms.",
+  
+  "product_zaszko_dutch_seeds": "Zaszko Dutch Seeds",
+  "product_zaszko_dutch_seeds_desc": "Zaszko Dutch Company seeds specialized in high-performance vegetable varieties. Dutch quality to ensure maximum productivity and resistance in your farm.",
+  
+  "product_carbini_tomato": "Carbini Greek Tomato",
+  "product_carbini_tomato_desc": "Hormonal growth regulator with 5% PCPA concentration, its role enhances fruit setting and reduces flower drop, significantly improving crop productivity such as tomatoes and legumes.",
+  
+  "product_senator_extra": "Senator Extra SC",
+  "product_senator_extra_desc": "Good chemical compound that works in a distinctive and unique way on most insects in vegetable crops. Active ingredient: Diafenthiuron 50% SC.",
+  
+  "product_solution_pesticide": "Solution",
+  "product_solution_pesticide_desc": "Insecticide specialized in controlling agricultural pests of spider type, providing absolute control over these harmful pests that infect vegetable crops, comes in a 100ml package.",
+  
+  "product_admiral_extra": "Admiral Extra",
+  "product_admiral_extra_desc": "Insecticide for protecting agricultural crops from pests, providing effective defense that ensures healthy growth and higher productivity.",
+  
+  "product_five_multi": "Five Multi",
+  "product_five_multi_desc": "Balanced gel formulation to support vegetative growth, used at concentration of 0.5-2 g/L, works efficiently with calcium, magnesium and microelements to improve nutrient absorption and plant growth.",
+  
+  "product_torofort_gel": "Torofort Gel Fertilizer",
+  "product_torofort_gel_desc": "(TOROFERT) - Saudi manufacturing with global quality. A new generation of fertilizers that provides concentrated and effective plant nutrition. Features soluble gel consistency to ensure maximum absorption and best results, produced by Target Level Company.",
+  
+  "product_grogreen_belgian": "GROGREEN Belgian Fertilizer",
+  "product_grogreen_belgian_desc": "Wide range of NPK formulations with superior Belgian quality from LIMA Company. We provide the ideal formulation for each growth stage, ensuring complete nutrition and abundant crops.",
+  
+  "product_cocoly": "Cocoly Fertilizer",
+  "product_cocoly_desc": "Water-soluble granular fertilizer that nourishes plants from roots to fruits, activates roots, enhances element absorption, balances soil acidity, and strengthens plants for better growth and larger yield thanks to its unique biological composition and patented polymer acid.",
+  
+  "product_organic_birds": "Organic Fertilizer 20kg (Birds)",
+  "product_organic_birds_desc": "Features very high content up to 70% of organic matter, making it ideal for improving soil structure and fertility, and enhancing its ability to retain water and nutrients.",
+
+  "organic_fertilizer_birds": "Organic Fertilizer 20kg (Birds)",
+  "organic_fertilizer_birds_desc": "Features very high content up to 70% of organic matter, making it ideal for improving soil structure and fertility, and enhancing its ability to retain water and nutrients.",
   "contact_section_title": "Contact Us",
   "contact_section_heading": "We are here to help",
   "contact_section_description": "Reach out for any inquiries about our services or products. Our team is happy to assist you through the following channels.",
@@ -142,5 +175,9 @@
   "whatsapp_custom_message": "✏️ Custom Message",
   "whatsapp_custom_prompt": "Type your message here:",
   "whatsapp_close": "Close window",
-  "location_text": "Misrata - Libya"
+  "location_text": "Misrata - Libya",
+  "filter_all": "All",
+  "filter_fertilizers": "Fertilizers",
+  "filter_seeds": "Seeds", 
+  "filter_materials": "Pesticides & Agricultural Supplies"
 }

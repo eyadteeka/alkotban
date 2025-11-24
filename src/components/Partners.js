@@ -6,7 +6,6 @@ const PartnerSection = () => {
 
     const partnerLogos = [
         "img/Co-logos/ALFAGEN.png",
-        "img/Co-logos/HEFE.png",
         "img/Co-logos/HM.png",
         "img/Co-logos/LIMA.png",
         "img/Co-logos/S&w.png",

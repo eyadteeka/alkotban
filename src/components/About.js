@@ -24,7 +24,7 @@ const About = () => {
                     data-toggle="counter-up"
                   >
                     <Counter
-                      value={13}
+                      value={23}
                       places={[10, 1]}
                       fontSize={80}
                       padding={5}

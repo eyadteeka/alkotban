@@ -26,11 +26,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f1f8ff;
   --bs-dark: #0f172b;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --bs-font-sans-serif: "Cairo", sans-serif ;
+  --bs-font-monospace: "Cairo", sans-serif !important;
   --bs-gradient: linear-gradient(180deg,
       rgba(255, 255, 255, 0.15),
       rgba(255, 255, 255, 0));
@@ -50,7 +47,7 @@
 
 body {
   margin: 0;
-  font-family: "Heebo", sans-serif;
+  font-family: "Cairo", sans-serif !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -86,7 +83,7 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Cairo", sans-serif !important;
   font-weight: 800;
   line-height: 1.2;
   color: #0f172b;
@@ -927,7 +924,7 @@ progress {
   --bs-gutter-y: 3rem;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .col-sm {
     flex: 1 0 0%;
   }
@@ -6275,7 +6272,7 @@ fieldset:disabled .btn {
   z-index: 1080;
   display: block;
   margin: 0;
-  font-family: "Heebo", sans-serif;
+  font-family: "Cairo", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6402,7 +6399,7 @@ fieldset:disabled .btn {
   z-index: 1070;
   display: block;
   max-width: 276px;
-  font-family: "Heebo", sans-serif;
+  font-family: "Cairo", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="container my-5 py-5">
           <div className="row align-items-center g-5">
             <div className="col-lg-6 text-center">
-              <h1 className=" text-white animated slideInLeft">{t('hero_heading')}</h1>
+              <h1 className="mb-4 text-white animated slideInLeft">{t('hero_heading')}</h1>
               <p className="text-white animated slideInLeft mb-4 pb-2">
                 {t('hero_subheading')}
               </p>
