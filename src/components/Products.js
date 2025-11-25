@@ -49,7 +49,7 @@ const Products = () => {
 },
 {
   id: 1,
-  image: "img/Products/p1.webp",
+  image: "img/Products/pp1.webp",
   nameKey: "product_carbini_tomato",
   designationKey: "product_carbini_tomato_desc",
   category: "materials",
