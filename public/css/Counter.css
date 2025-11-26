@@ -1,85 +1,95 @@
 .counter-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .counter-counter {
-    display: flex;
-    overflow: hidden;
-    line-height: 1;
-    flex-direction: row;
+  display: flex;
+  overflow: hidden;
+  line-height: 1;
+  flex-direction: row;
 }
 
 .counter-digit {
-    position: relative;
-    width: 1ch;
-    font-variant-numeric: tabular-nums;
+  position: relative;
+  width: 1ch;
+  font-variant-numeric: tabular-nums;
 }
 
 .counter-number {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gradient-container {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .bottom-gradient {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* دعم RTL */
 [dir="rtl"] .counter-container {
-    text-align: right;
+  text-align: right;
 }
 
 [dir="rtl"] .counter-counter {
-    flex-direction: row-reverse !important;
+  flex-direction: row-reverse !important;
 }
 
 [dir="rtl"] .counter-digit {
-    direction: ltr; /* الحفاظ على اتجاه الأرقام */
+  direction: ltr; /* الحفاظ على اتجاه الأرقام */
 }
 
 [dir="rtl"] .counter-number {
-    direction: ltr; /* الحفاظ على اتجاه الأرقام */
+  direction: ltr; /* الحفاظ على اتجاه الأرقام */
 }
 
 .counter-text {
-    direction: ltr; /* الحفاظ على اتجاه الأرقام في النص */
+  direction: ltr; /* الحفاظ على اتجاه الأرقام في النص */
 }
 
 [dir="rtl"] .counter-formatted-value {
-    text-align: right;
-    direction: rtl;
+  text-align: right;
+  direction: rtl;
 }
 
 /* تحسينات للعربية */
 [lang="ar"] .counter-digit {
-    font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
 }
 
 /* responsive design */
 @media (max-width: 768px) {
-    .counter-container {
-        text-align: center;
-    }
-    
-    [dir="rtl"] .counter-container {
-        text-align: center;
-    }
+  .counter-container {
+    text-align: center;
+  }
+
+  [dir="rtl"] .counter-container {
+    text-align: center;
+  }
 }
+[dir="rtl"] .border-start {
+  border-left: 5px solid #f8cb1e !important;
+  border-right: 0px !important;
+}
+
+[dir="ltr"] .border-start {
+  border-right: 5px solid #f8cb1e !important;
+  border-left: 0px !important;
+}
+

@@ -6,7 +6,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container-xxl py-5">
+    <div className="about-section">
       <div className="container">
         <div className="row g-5 align-items-center">
           <div className="col-lg-6">
@@ -18,7 +18,7 @@ const About = () => {
             <p className="mb-4"  style={{lineHeight: '30px'}}>{t("about_paragraph_two")}</p>
             <div className="row g-4 mb-4">
               <div className="col-sm-6">
-                <div className="d-flex align-items-center border-start border-5 border-primary px-3">
+                <div className="align-items-center border-start border-primary px-3">
                   <h1
                     className="flex-shrink-0 display-5 text-secondary mb-0"
                     data-toggle="counter-up"
