@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="alkotbanLogoTitle">
+  <title id="alkotbanLogoTitle">شعار شركة الكتبان لاستيراد المواد الزراعية</title>
+  <defs>
+    <linearGradient id="wheatGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2C21A" />
+      <stop offset="100%" stop-color="#D98E1C" />
+    </linearGradient>
+  </defs>
+
+  <!-- outer ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#3A5A40" stroke-width="6" />
+
+  <!-- stylised leaf / flag shape (left) -->
+  <path d="M 46 40
+           C 90 46, 96 82, 70 118
+           C 58 134, 42 146, 30 156
+           C 40 128, 44 96, 40 70
+           C 38 58, 40 48, 46 40 Z"
+        fill="#3A5A40" />
+  <path d="M 46 40 C 60 66, 62 96, 44 128"
+        fill="none" stroke="#16240E" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+
+  <!-- central grain dots -->
+  <circle cx="100" cy="58" r="7" fill="#3A5A40" />
+  <circle cx="100" cy="80" r="6" fill="#3A5A40" />
+
+  <!-- wheat stalk (center-bottom) -->
+  <path d="M 100 92 C 92 118, 90 142, 96 166" fill="none" stroke="#3A5A40" stroke-width="4" stroke-linecap="round" />
+  <path d="M 96 166 C 88 156, 80 150, 70 148" fill="none" stroke="#D98E1C" stroke-width="4" stroke-linecap="round" />
+
+  <!-- large wheat ear (right) -->
+  <g fill="url(#wheatGradient)">
+    <ellipse cx="140" cy="70" rx="9" ry="14" transform="rotate(-18 140 70)" />
+    <ellipse cx="150" cy="88" rx="9.5" ry="15" transform="rotate(-10 150 88)" />
+    <ellipse cx="155" cy="108" rx="10" ry="16" transform="rotate(-2 155 108)" />
+    <ellipse cx="153" cy="129" rx="10" ry="16" transform="rotate(8 153 129)" />
+    <ellipse cx="146" cy="148" rx="9.5" ry="15" transform="rotate(16 146 148)" />
+    <ellipse cx="134" cy="162" rx="9" ry="14" transform="rotate(24 134 162)" />
+
+    <ellipse cx="122" cy="76" rx="8" ry="12.5" transform="rotate(14 122 76)" />
+    <ellipse cx="118" cy="96" rx="8.5" ry="13.5" transform="rotate(6 118 96)" />
+    <ellipse cx="118" cy="117" rx="9" ry="14" transform="rotate(-4 118 117)" />
+    <ellipse cx="121" cy="138" rx="8.5" ry="13.5" transform="rotate(-12 121 138)" />
+    <ellipse cx="126" cy="156" rx="8" ry="12.5" transform="rotate(-20 126 156)" />
+  </g>
+  <path d="M 137 60 C 133 96, 131 134, 130 168" fill="none" stroke="#D98E1C" stroke-width="4" stroke-linecap="round" />
+</svg>

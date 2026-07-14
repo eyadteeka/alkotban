@@ -1,9 +1,14 @@
 import React from "react";
-import Counter from "./counter";
 import { useTranslation } from "react-i18next";
 
 const About = () => {
   const { t } = useTranslation();
+
+  const facts = [
+    { label: t("about_fact_location_label"), value: t("about_fact_location_value") },
+    { label: t("about_fact_founded_label"), value: t("about_fact_founded_value") },
+    { label: t("about_fact_activity_label"), value: t("about_fact_activity_value") },
+  ];
 
   return (
     <div className="about-section">
@@ -16,34 +21,19 @@ const About = () => {
             <h1 className="mb-4">{t("about_heading")}</h1>
             <p className="mb-4" style={{lineHeight: '30px'}}>{t("about_paragraph_one")}</p>
             <p className="mb-4"  style={{lineHeight: '30px'}}>{t("about_paragraph_two")}</p>
-            <div className="row g-4 mb-4">
-              <div className="col-sm-6">
-                <div className="align-items-center border-start border-primary px-3">
-                  <h1
-                    className="flex-shrink-0 display-5 text-secondary mb-0"
-                    data-toggle="counter-up"
-                  >
-                    <Counter
-                      value={23}
-                      places={[10, 1]}
-                      fontSize={80}
-                      padding={5}
-                      gap={10}
-                      textColor="var(--text-primary)"
-                      fontWeight={900}
-                      formatNumber={true}
-                    />
-                  </h1>
-                  <div className="ps-4">
-                    <p className="mb-0">{t("about_experience_label")}</p>
-                    <h6 className="text-uppercase mb-0">
-                      {t("about_experience_years")}
-                    </h6>
-                  </div>
+
+            <blockquote className="about-quote">
+              {t("about_quote")}
+            </blockquote>
+
+            <div className="about-facts">
+              {facts.map((fact) => (
+                <div className="about-fact-item" key={fact.label}>
+                  <span className="about-fact-label">{fact.label}</span>
+                  <span className="about-fact-value">{fact.value}</span>
                 </div>
-              </div>
+              ))}
             </div>
-            {/* <a className="btn btn-primary py-3 px-5 mt-2" href="">Read More</a> */}
           </div>
           <div className="col-lg-6">
             <div className="row g-3">

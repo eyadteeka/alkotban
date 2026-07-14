@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 const ProductMember = ({ image, name, designation }) => {
   return (
     <div className={`col-lg-3 col-md-4 wow mb-4`}>
@@ -14,9 +15,14 @@ const ProductMember = ({ image, name, designation }) => {
   );
 };
 
+const VALID_FILTERS = ["fertilizers", "seeds", "materials"];
+
 const Products = () => {
   const { t } = useTranslation();
-  const [activeFilter, setActiveFilter] = useState("*");
+  const [searchParams] = useSearchParams();
+  const requestedFilter = searchParams.get("filter");
+  const initialFilter = VALID_FILTERS.includes(requestedFilter) ? requestedFilter : "*";
+  const [activeFilter, setActiveFilter] = useState(initialFilter);
 
   const Products = [
 {

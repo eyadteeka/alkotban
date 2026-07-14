@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaMedal, FaUtensils, FaCartPlus, FaHeadset, FaEye, FaAward, FaHistory } from 'react-icons/fa';
+import { FaHeadset, FaEye, FaAward, FaHistory } from 'react-icons/fa';
 
 const ServiceItem = ({ delay, Icon, title }) => {
   return (

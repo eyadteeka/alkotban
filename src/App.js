@@ -3,8 +3,14 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TrustBar from "./components/TrustBar";
 import Services from "./components/Services";
 import About from "./components/About";
+import ProductCategories from "./components/ProductCategories";
+import SupplyNetwork from "./components/SupplyNetwork";
+import Process from "./components/Process";
+import Quality from "./components/Quality";
+import FinalCta from "./components/FinalCta";
 import Reservation from "./components/Reservation";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
@@ -39,10 +45,16 @@ function HomePage() {
       <Navbar />
       <ScrollToHash />
       <section id="home" data-section="home"><Hero /></section>
+      <TrustBar />
       <section id="about" data-section="about"><About /></section>
+      <section id="products" data-section="products"><ProductCategories /></section>
       <section id="our_values" data-section="our_values"><Services /></section>
       <section id="why_us" data-section="why_us"><VerticalStepper /></section>
+      <SupplyNetwork />
+      <Process />
+      <Quality />
       <section id="partners" data-section="partners"><PartnerSection /></section>
+      <FinalCta />
       <section id="contact" data-section="contact"><Reservation /></section>
       <Footer />
       <BackToTop />

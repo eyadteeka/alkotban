@@ -1,81 +1,43 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
-const Navbar = ({style}) => {
-  const { t, i18n } = useTranslation();
-  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
-  const toggleLanguageMenu = () => {
-    setIsLanguageMenuOpen(!isLanguageMenuOpen);
-  };
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
-    document.documentElement.lang = lng;
-  };
-  const handleLanguageChange = (lng) => {
-    changeLanguage(lng);
-    closeLanguageMenu();
-  };
-  const closeLanguageMenu = () => {
-    setIsLanguageMenuOpen(false);
-  };
+
+const Navbar = ({ style }) => {
+  const { t } = useTranslation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 45);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0 ' style={{...style}}>
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0 ${isScrolled ? 'sticky-top shadow-sm' : ''}`}
+      style={{ ...style }}
+    >
       <div style={{ display: "flex" }}>
-        <a href="/" className="navbar-brand p-0">
-          <h5 className="text-primary m-0">
-            <img
-              className="img-fluid"
-              style={{ paddingLeft: "10px", paddingRight: "10px" }}
-              src="img/Co-logos/greenfield-fav.png"
-              alt={t("navbar_logo_alt")}
-            />
-            {t("navbar_brand_name")}
-          </h5>
+        <a href="/" className="navbar-brand p-0 d-flex align-items-center brand-lockup">
+          <img
+            className="brand-logo"
+            src="img/alkotban-logo.svg"
+            alt={t("navbar_logo_alt")}
+          />
+          <span className="brand-name text-primary">{t("navbar_brand_name")}</span>
         </a>
       </div>
-      <div className="language-e" style={{ display: "none" }}>
-        <div className="mobile-controls">
-          <button
-            className="mobile-language-toggle"
-            onClick={toggleLanguageMenu}
-            aria-label="Change language"
-          >
-            <FontAwesomeIcon icon={faGlobe} className="text-primary" />
 
-          </button>
-          {isLanguageMenuOpen && (
-            <div className="mobile-language-dropdown">
-              <button
-                className={`mobile-lang-item ${
-                  i18n.language === "en" ? "active" : ""
-                }`}
-                onClick={() => handleLanguageChange("en")}
-              >
-                English
-              </button>
-              <button
-                className={`mobile-lang-item ${
-                  i18n.language === "ar" ? "active" : ""
-                }`}
-                onClick={() => handleLanguageChange("ar")}
-              >
-                العربية
-              </button>
-            </div>
-          )}
-
-        </div>
-      </div>
       <button
         className="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
+        aria-label={t("nav_toggle_menu")}
       >
         <FontAwesomeIcon icon={faBars} />
       </button>
@@ -88,9 +50,15 @@ const Navbar = ({style}) => {
           <a href="/#about" className="nav-item nav-link">
             {t("nav_about")}
           </a>
-          <Link  to="/products" className="nav-item nav-link">
+          <Link to="/products" className="nav-item nav-link">
             {t("nav_menu")}
-          </Link >
+          </Link>
+          <a href="/#why_us" className="nav-item nav-link">
+            {t("nav_why")}
+          </a>
+          <a href="/#partners" className="nav-item nav-link">
+            {t("nav_partners")}
+          </a>
           <a href="/#contact" className="nav-item nav-link">
             {t("nav_contact")}
           </a>
@@ -98,6 +66,9 @@ const Navbar = ({style}) => {
       </div>
       <div className="nav-e" style={{ display: "flex" }}>
         <div className="d-flex align-items-center gap-3">
+          <a href="/#contact" className="btn nav-cta-btn d-none d-lg-inline-flex">
+            {t("nav_cta")}
+          </a>
           <LanguageSwitcher />
         </div>
       </div>

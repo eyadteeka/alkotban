@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaWhatsapp, FaTimes } from 'react-icons/fa';
 
 const WhatsAppWidget = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const widgetRef = useRef(null);
 
   const config = {
     phoneNumber: "+218913364768",
-    companyName: "GreenField",
+    companyName: t('whatsapp_company_name'),
     quickReplies: [
-      { text: "📋 قائمة المنتجات", message: "أرغب في رؤية قائمة المنتجات" },
-      { text: "📍 الموقع", message: "أين موقع الشركة بالضبط؟" }
+      { text: t('whatsapp_products_list'), message: t('whatsapp_products_message') },
+      { text: t('whatsapp_location'), message: t('whatsapp_location_message') }
     ]
   };
 
@@ -68,13 +70,13 @@ const WhatsAppWidget = () => {
               </div>
               <div className="company-details">
                 <h6>{config.companyName}</h6>
-                <span className="status online">● متصل الآن</span>
+                <span className="status online">{t('whatsapp_online')}</span>
               </div>
             </div>
             <button
               className="close-widget-btn"
               onClick={() => setIsOpen(false)}
-              aria-label="إغلاق النافذة"
+              aria-label={t('whatsapp_close')}
             >
               <FaTimes size={16} color="white" />
             </button>
@@ -83,8 +85,8 @@ const WhatsAppWidget = () => {
           {/* المحتوى */}
           <div className="widget-content">
             <div className="welcome-message">
-              <p>مرحباً! 👋</p>
-              <p>كيف يمكننا مساعدتك؟</p>
+              <p>{t('whatsapp_welcome')}</p>
+              <p>{t('whatsapp_help')}</p>
             </div>
 
             <div className="quick-replies">
@@ -102,14 +104,14 @@ const WhatsAppWidget = () => {
             <button
               className="custom-message-btn"
               onClick={() => {
-                const message = prompt("اكتب رسالتك هنا:");
+                const message = prompt(t('whatsapp_custom_prompt'));
                 if (message) {
                   window.open(generateWhatsAppUrl(message), '_blank');
                 }
                 setIsOpen(false);
               }}
             >
-              ✏️ رسالة مخصصة
+              {t('whatsapp_custom_message')}
             </button>
           </div>
         </div>

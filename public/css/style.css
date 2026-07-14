@@ -25,6 +25,14 @@ body {
     --line-height-rtl: 1.8;
     --line-height-ltr: 1.6;
 
+    /* ALKOTBAN identity extension */
+    --ivory: #F7F3E9;
+    --ivory-dark: #EFE8D6;
+    --charcoal: #26251F;
+    --earth: #8A6642;
+    --earth-light: #B79463;
+    --gold-muted: #C89A3C;
+    --pine-900: #101c0b;
 }
 
 body {
