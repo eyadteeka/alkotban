@@ -102,31 +102,35 @@ const Reservation = () => {
   };
 
   return (
-    <div className="container-xxl py-5 contact-section">
+    <div className="rf-contact">
       <div className="container">
-        <div className="text-center wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: 720, margin: '0 auto' }}>
-          <h5 className="section-title ff-secondary text-center text-secondary fw-normal">{t('contact_section_title')}</h5>
-          <h1 className="mb-3">{t('contact_section_heading')}</h1>
-          <p className="contact-section-description">{t('contact_section_description')}</p>
+        <div className="rf-contact-header wow fadeInUp" data-wow-delay="0.1s">
+          <span className="rf-eyebrow">{t('contact_section_title')}</span>
+          <h2 className="rf-heading">{t('contact_section_heading')}</h2>
+          <p className="rf-contact-description">{t('contact_section_description')}</p>
         </div>
 
-        <div className="row g-5 mt-2">
+        <div className="row g-4 g-lg-5 mt-2">
           <div className="col-lg-5 wow fadeInUp" data-wow-delay="0.15s">
-            <ul className="contact-details list-unstyled">
-              {contactDetails.map(({ Icon, label, value, href }, index) => (
-                <li key={index} className="contact-details-item">
-                  <Icon className="contact-details-icon text-primary" />
-                  <div>
-                    <span className="contact-details-label">{label}</span>
-                    <a href={href} target="_blank" rel="noreferrer" className="contact-details-link p-ltr">
-                      {value}
-                    </a>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="contact-map-wrapper">
-              <Map />
+            <div className="rf-contact-panel">
+              <ul className="rf-contact-list">
+                {contactDetails.map(({ Icon, label, value, href }, index) => (
+                  <li key={index} className="rf-contact-row">
+                    <span className="rf-contact-icon">
+                      <Icon />
+                    </span>
+                    <div>
+                      <span className="rf-contact-label">{label}</span>
+                      <a href={href} target="_blank" rel="noreferrer" className="rf-contact-value p-ltr">
+                        {value}
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="rf-contact-map">
+                <Map />
+              </div>
             </div>
           </div>
 

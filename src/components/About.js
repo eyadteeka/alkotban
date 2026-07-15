@@ -11,70 +11,56 @@ const About = () => {
   ];
 
   return (
-    <div className="about-section">
+    <section className="rf-about">
       <div className="container">
         <div className="row g-5 align-items-center">
-          <div className="col-lg-6">
-            <h5 className="section-title ff-secondary text-start text-secondary fw-normal">
+          <div className="col-lg-6 order-2 order-lg-1">
+            <span className="rf-eyebrow wow fadeInUp" data-wow-delay="0.1s">
               {t("about_section_title")}
-            </h5>
-            <h1 className="mb-4">{t("about_heading")}</h1>
-            <p className="mb-4" style={{lineHeight: '30px'}}>{t("about_paragraph_one")}</p>
-            <p className="mb-4"  style={{lineHeight: '30px'}}>{t("about_paragraph_two")}</p>
+            </span>
+            <h2 className="rf-heading wow fadeInUp" data-wow-delay="0.15s">
+              {t("about_heading")}
+            </h2>
+            <p className="rf-body wow fadeInUp" data-wow-delay="0.2s">
+              {t("about_paragraph_one")}
+            </p>
+            <p className="rf-body wow fadeInUp" data-wow-delay="0.25s">
+              {t("about_paragraph_two")}
+            </p>
 
-            <blockquote className="about-quote">
-              {t("about_quote")}
-            </blockquote>
-
-            <div className="about-facts">
-              {facts.map((fact) => (
-                <div className="about-fact-item" key={fact.label}>
-                  <span className="about-fact-label">{fact.label}</span>
-                  <span className="about-fact-value">{fact.value}</span>
-                </div>
-              ))}
+            <div className="rf-quote wow fadeInUp" data-wow-delay="0.3s">
+              <span className="rf-quote-mark" aria-hidden="true">“</span>
+              <p>{t("about_quote")}</p>
             </div>
+
+            <a href="#why_us" className="rf-text-link wow fadeInUp" data-wow-delay="0.35s">
+              {t("about_cta")}
+            </a>
           </div>
-          <div className="col-lg-6">
-            <div className="row g-3">
-              <div className="col-6 text-start">
+
+          <div className="col-lg-6 order-1 order-lg-2">
+            <div className="rf-about-visual">
+              <div className="rf-about-frame wow zoomIn" data-wow-delay="0.15s">
                 <img
-                  className="img-fluid rounded w-100 wow zoomIn"
-                  data-wow-delay="0.1s"
+                  className="rf-about-img"
                   src="img/about-1.png"
-                  alt="About 1"
+                  alt={t("about_image_alt")}
+                  loading="lazy"
                 />
               </div>
-              <div className="col-6 text-start">
-                <img
-                  className="img-fluid rounded w-75 wow zoomIn"
-                  data-wow-delay="0.3s"
-                  src="img/about-2.png"
-                  alt="About 2"
-                  style={{ marginTop: "25%" }}
-                />
-              </div>
-              <div className="col-6 text-end">
-                <img
-                  className="img-fluid rounded w-75 wow zoomIn"
-                  data-wow-delay="0.5s"
-                  src="img/about-3.png"
-                  alt="About 3"
-                />
-              </div>
-              <div className="col-6 text-end">
-                <img
-                  className="img-fluid rounded w-100 wow zoomIn"
-                  data-wow-delay="0.7s"
-                  src="img/about-4.png"
-                  alt="About 4"
-                />
+              <div className="rf-fact-card wow fadeInUp" data-wow-delay="0.4s">
+                {facts.map((fact) => (
+                  <div className="rf-fact-row" key={fact.label}>
+                    <span className="rf-fact-label">{fact.label}</span>
+                    <span className="rf-fact-value">{fact.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

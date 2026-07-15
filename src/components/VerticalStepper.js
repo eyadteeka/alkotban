@@ -1,83 +1,63 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaCertificate, FaMapMarkedAlt, FaTools, FaShippingFast } from 'react-icons/fa';
 
-const VerticalStepper = ({ isRTL = true }) => {
+const VerticalStepper = () => {
     const { t } = useTranslation();
 
-    const steps = [
+    const reasons = [
         {
-            number: 1,
+            Icon: FaCertificate,
             titleKey: 'vertical_step_one_title',
             highlightKey: 'vertical_step_one_highlight',
-            descriptionKey: 'vertical_step_one_description'
+            descKey: 'vertical_step_one_description'
         },
         {
-            number: 2,
+            Icon: FaMapMarkedAlt,
             titleKey: 'vertical_step_two_title',
             highlightKey: 'vertical_step_two_highlight',
-            descriptionKey: 'vertical_step_two_description'
+            descKey: 'vertical_step_two_description'
         },
         {
-            number: 3,
+            Icon: FaTools,
             titleKey: 'vertical_step_three_title',
             highlightKey: 'vertical_step_three_highlight',
-            descriptionKey: 'vertical_step_three_description'
+            descKey: 'vertical_step_three_description'
         },
         {
-            number: 4,
+            Icon: FaShippingFast,
             titleKey: 'vertical_step_four_title',
             highlightKey: 'vertical_step_four_highlight',
-            descriptionKey: 'vertical_step_four_description'
+            descKey: 'vertical_step_four_description'
         }
     ];
 
-    useEffect(() => {
-        // Animation trigger on component mount
-        const stepElements = document.querySelectorAll('.vertical-step');
-
-        const timeout = setTimeout(() => {
-            stepElements.forEach(step => {
-                step.style.opacity = '1';
-                step.style.transform = 'translateY(0)';
-            });
-        }, 300);
-
-        return () => clearTimeout(timeout);
-    }, []);
-
     return (
-        <section className="vertical-stepper-section">
-            <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h2 className="section-title ff-secondary text-center text-secondary fw-normal mb-5">
+        <section className="rf-why">
+            <div className="container">
+                <span className="rf-eyebrow wow fadeInUp" data-wow-delay="0.1s">
                     {t('vertical_step_heading')}
-                </h2>
-            </div>
+                </span>
 
-            <div className="vertical-stepper-container">
-                <div className="vertical-stepper-content">
-                    <div className="vertical-stepper-line"></div>
-
-                    {steps.map((step, index) => (
-                        <div key={index} className="vertical-step">
-                            <div className="vertical-step-bullet">
-                                {step.number}
-                            </div>
-                            <div className="vertical-step-content">
-                                <h3>
-                                    {t(step.titleKey)}
-                                    <span className="vertical-feature-highlight text-secondary">{t(step.highlightKey)}</span>
+                <div className="rf-why-grid">
+                    {reasons.map(({ Icon, titleKey, highlightKey, descKey }, index) => (
+                        <div
+                            className="rf-why-item wow fadeInUp"
+                            data-wow-delay={`${0.15 + index * 0.1}s`}
+                            key={titleKey}
+                        >
+                            <span className="rf-why-icon">
+                                <Icon />
+                            </span>
+                            <div className="rf-why-copy">
+                                <h3 className="rf-why-title">
+                                    {t(titleKey)}
+                                    <span className="rf-why-tag">{t(highlightKey)}</span>
                                 </h3>
-                                <p>{t(step.descriptionKey)}</p>
+                                <p className="rf-why-desc">{t(descKey)}</p>
                             </div>
                         </div>
                     ))}
-                </div>
-
-                <div className="vertical-stepper-visual">
-                    <img
-                        src="/img/hero-bg-2.png"
-                        alt={t('vertical_step_image_alt')}
-                    />
                 </div>
             </div>
         </section>
