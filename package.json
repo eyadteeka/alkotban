@@ -26,7 +26,6 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "typescript": "5.9.3"
   },
   "overrides": {
@@ -39,10 +38,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && firebase deploy --only hosting:greenfield",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
