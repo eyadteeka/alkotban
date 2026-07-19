@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="row g-5">
           <div className="col-lg-4 col-md-6">
             <a href="/" className="d-flex align-items-center brand-lockup mb-3">
-              <img className="brand-logo" src="img/alkotban-logo.svg" alt={t('navbar_logo_alt')} />
+              <img className="brand-logo" src="img/alkotban-logo.png" alt={t('navbar_logo_alt')} />
               <span className="brand-name text-primary">{t('navbar_brand_name')}</span>
             </a>
             <p className="footer-about-blurb">{t('footer_about_blurb')}</p>

@@ -3,18 +3,20 @@
   "name": "ALKOTBAN for Importing Agricultural Materials",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "img/alkotban-logo.svg",
-      "type": "image/svg+xml",
-      "sizes": "any"
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#16240e",
-  "background_color": "#F7F3E9"
+  "theme_color": "#4A5426",
+  "background_color": "#F5F1E6"
 }

@@ -61,7 +61,7 @@ const ProductCategories = () => {
         <div className="row g-4 mt-3">
           {categories.map((cat, index) => (
             <div className={`col-md-6 col-${cat.size} wow fadeInUp`} data-wow-delay={`${0.1 * (index + 1)}s`} key={cat.key}>
-              <Link to={cat.to} className={`category-card tone-${cat.tone}`}>
+              <Link to={cat.to} className={`category-card category-${cat.key} tone-${cat.tone}`}>
                 <span className="category-card-icon">
                   <cat.Icon />
                 </span>

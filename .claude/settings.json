@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const l=require\\('./package-lock.json'\\); console.log\\('lockfileVersion:', l.lockfileVersion\\)\")",
+      "Bash(rm -rf node_modules)"
+    ]
+  }
+}

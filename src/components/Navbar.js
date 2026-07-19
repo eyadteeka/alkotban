@@ -25,7 +25,7 @@ const Navbar = ({ style }) => {
         <a href="/" className="navbar-brand p-0 d-flex align-items-center brand-lockup">
           <img
             className="brand-logo"
-            src="img/alkotban-logo.svg"
+            src="img/alkotban-logo.png"
             alt={t("navbar_logo_alt")}
           />
           <span className="brand-name text-primary">{t("navbar_brand_name")}</span>
