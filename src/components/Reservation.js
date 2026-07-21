@@ -121,7 +121,12 @@ const Reservation = () => {
                     </span>
                     <div>
                       <span className="rf-contact-label">{label}</span>
-                      <a href={href} target="_blank" rel="noreferrer" className="rf-contact-value p-ltr">
+                      <a
+                        href={href}
+                        target={href.startsWith('https:') ? '_blank' : undefined}
+                        rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}
+                        className="rf-contact-value p-ltr"
+                      >
                         {value}
                       </a>
                     </div>

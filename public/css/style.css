@@ -15,43 +15,76 @@ body {
 
 /********** Template CSS **********/
 :root {
-    /* Al-Kathban identity palette v1.0 */
-    --color-primary: #ffffff;
-    --color-primary-dark: #4A5426;
-    --color-background: #F5F1E6;
-    --color-background-alt: #FFFFFF;
-    --color-accent: #9CB05E;
-    --color-earth: #6B4226;
-    --color-text: #1E1E1A;
-    --color-text-muted: #8A8778;
-    --color-border: #8A8778;
-    --color-success-highlight: #9CB05E;
+    /* =====================================================
+       ALKOTBAN B2B palette v2.0
+       Contrast ratios noted per token are measured against
+       the surface each token is actually used on. All text
+       pairings meet WCAG 2.1 AA (4.5:1 body, 3:1 large).
+       ===================================================== */
+
+    /* --- Brand greens --- */
+    --color-primary: #2D5016;        /* dark professional green — 8.85:1 on page bg */
+    --color-primary-dark: #1F3A0F;   /* deepest green — dark section surfaces */
+    --color-primary-light: #3E6B20;  /* hover / raised state */
+    --color-accent: #4A7C59;         /* CTA green — 4.86:1 with white text */
+    --color-accent-dark: #3B6547;    /* CTA hover */
+
+    /* --- Warm earth --- */
+    --color-brown: #8B6F47;          /* decorative brown: rules, borders, icon fills */
+    --color-brown-text: #7A6035;     /* small text on light — 5.66:1 (plain #8B6F47 is 4.50:1, too thin) */
+    --color-sand: #D4BE90;           /* warm light — text/icons/CTA on dark green (5.10:1 on primary, 6.93:1 on primary-dark) */
+    --color-sand-dark: #C0A87A;      /* sand hover — 5.46:1 with deep-green text */
+
+    /* --- Neutral surfaces --- */
+    --color-background: #FAFAF8;     /* page — warm white */
+    --color-surface: #FFFFFF;        /* cards raised off the page */
+    --color-background-alt: #F1EFE8; /* alternating section tint — separates sections */
+    --color-border: #E2DFD5;         /* hairline dividers on light */
+    --color-border-strong: #C9C4B4;  /* form field borders */
+
+    /* --- Text --- */
+    --color-text: #2C2C2C;           /* headings — 13.4:1 on page bg */
+    --color-text-body: #4F4A42;      /* body copy, warm dark gray — 8.4:1 */
+    --color-text-muted: #5A5A52;     /* labels / captions — 6.7:1 */
+    --color-on-dark: #F5F3EE;        /* text on dark green surfaces — 11.7:1 */
     --color-white: #FFFFFF;
-    --color-category-fertilizers: #6B4226;
-    --color-category-seeds: #C9A227;
-    --color-category-pesticides: #D97B29;
+
+    /* --- Status --- */
     --color-hazard: #B23A2E;
     --color-info: #3D6B8C;
+    --color-success-highlight: #4A7C59;
 
-    /* Existing theme aliases */
-    --primary: var(--color-primary);
-    --light: var(--color-background-alt);
-    --dark: var(--color-primary-dark);
-    --secondary: var(--color-accent);
-    --secondary-dark: var(--color-earth);
+    /* --- Product categories: one brand family, no rainbow --- */
+    --color-category-fertilizers: #2D5016;
+    --color-category-seeds: #4A7C59;
+    --color-category-pesticides: #8B6F47;
+
+    /* --- Typography --- */
     --font-family-arabic: "Cairo", sans-serif;
     --font-family-english: "Cairo", sans-serif;
     --line-height-rtl: 1.8;
     --line-height-ltr: 1.6;
+    --transition: 0.25s ease;
 
-    /* ALKOTBAN identity extension */
-    --ivory: var(--color-background);
-    --ivory-dark: var(--color-background-alt);
+    /* =====================================================
+       Legacy aliases — kept so existing rules keep working.
+       `--primary` was #ffffff, which rendered white text on
+       white backgrounds across the CTA, network and card
+       sections. It now resolves to the brand green.
+       ===================================================== */
+    --primary: var(--color-primary);
+    --light: var(--color-on-dark);
+    --dark: var(--color-primary-dark);
+    --secondary: var(--color-sand);        /* used almost exclusively on dark surfaces */
+    --secondary-dark: var(--color-sand-dark);
+    --ivory: var(--color-background-alt);
+    --ivory-dark: var(--color-border);     /* was #FFFFFF — invisible section borders */
     --charcoal: var(--color-text);
-    --earth: var(--color-earth);
-    --earth-light: var(--color-success-highlight);
-    --gold-muted: var(--color-accent);
+    --earth: var(--color-text-body);
+    --earth-light: var(--color-accent);
+    --gold-muted: var(--color-brown-text); /* text-safe brown on light surfaces */
     --pine-900: var(--color-primary-dark);
+    --text-dark: var(--color-text);        /* was referenced but never defined */
 }
 
 body {
@@ -82,7 +115,7 @@ body {
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
+    left: 45px;
     bottom: 45px;
     z-index: 99;
 }
@@ -246,7 +279,7 @@ body {
     top: 50%;
     left: -55px;
     margin-top: -1px;
-    background: var(--secondary);
+    background: var(--color-brown);
 }
 
 .section-title::after {
@@ -257,7 +290,15 @@ body {
     top: 50%;
     right: -55px;
     margin-top: -1px;
-    background: var(--secondary);
+    background: var(--color-brown);
+}
+
+/* On dark green surfaces the brown rule disappears — use sand instead */
+.footer .section-title::before,
+.footer .section-title::after,
+.network-section .section-title::before,
+.network-section .section-title::after {
+    background: var(--color-sand);
 }
 
 .section-title.text-start::before,
@@ -535,7 +576,8 @@ body {
 }
 
 .footer .btn.btn-social:hover {
-    color: var(--primary);
+    color: var(--color-sand);
+    border-color: var(--color-sand);
 }
 
 .footer .btn.btn-link {
@@ -807,15 +849,15 @@ body {
   min-height: 44px;
   justify-content: center;
   align-items: center;
-  color: #000000;
+  color: var(--color-on-dark);
   font-size: 1.2rem;
   transition: var(--transition);
   border-radius: 50%;
 }
 
 .mobile-language-toggle:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--primary);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-sand);
 }
 
 .mobile-language-toggle:active {
@@ -827,7 +869,7 @@ body {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  background: #ffffff;
+  background: var(--color-surface);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   min-width: 140px;
@@ -863,13 +905,13 @@ body {
 }
 
 .mobile-lang-item:hover {
-  background: rgba(136, 180, 78, 0.1);
-  color: var(--primary);
+  background: rgba(45, 80, 22, 0.08);
+  color: var(--color-primary);
 }
 
 .mobile-lang-item.active {
-  background: rgba(136, 180, 78, 0.15);
-  color: var(--primary);
+  background: rgba(45, 80, 22, 0.12);
+  color: var(--color-primary);
   font-weight: 600;
 }
 

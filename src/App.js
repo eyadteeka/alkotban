@@ -1,6 +1,6 @@
 // App.js
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustBar from "./components/TrustBar";
@@ -20,20 +20,23 @@ import PartnerSection from "./components/Partners";
 import VerticalStepper from "./components/VerticalStepper";
 
 // مكون لمعالجة التمرير إلى الأقسام
-function ScrollToHash() {
+function ScrollManager() {
   const location = useLocation();
 
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace('#', '');
+      const id = decodeURIComponent(location.hash.slice(1));
       const element = document.getElementById(id);
       if (element) {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
+        return () => clearTimeout(timer);
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
 
   return null;
 }
@@ -43,7 +46,6 @@ function HomePage() {
   return (
     <div className="App">
       <Navbar />
-      <ScrollToHash />
       <section id="home" data-section="home"><Hero /></section>
       <TrustBar />
       <section id="about" data-section="about"><About /></section>
@@ -80,13 +82,12 @@ function ProductsPage() {
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      <ScrollManager />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPage />} />
         {/* إعادة توجيه الروابط القديمة */}
-        <Route path="/#contact" element={<HomePage />} />
-        <Route path="/#about" element={<HomePage />} />
-        <Route path="/#products" element={<ProductsPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

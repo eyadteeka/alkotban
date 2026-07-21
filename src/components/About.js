@@ -43,7 +43,7 @@ const About = () => {
               <div className="rf-about-frame wow zoomIn" data-wow-delay="0.15s">
                 <img
                   className="rf-about-img"
-                  src="img/about-1.png"
+                  src={`${process.env.PUBLIC_URL}/img/about-1.png`}
                   alt={t("about_image_alt")}
                   loading="lazy"
                 />

@@ -9,7 +9,7 @@ const WhatsAppWidget = () => {
   const widgetRef = useRef(null);
 
   const config = {
-    phoneNumber: "+218913364768",
+    phoneNumber: "218913364768",
     companyName: t('whatsapp_company_name'),
     quickReplies: [
       { text: t('whatsapp_products_list'), message: t('whatsapp_products_message') },

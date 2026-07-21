@@ -12,7 +12,7 @@
 
 .vertical-stepper-header h2 {
     font-size: 2.5rem;
-    color: #252c30;
+    color: var(--color-text);
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
@@ -32,7 +32,7 @@
 
 .vertical-stepper-header p {
     font-size: 1.1rem;
-    color: #777;
+    color: var(--color-text-body);
     max-width: 600px;
     margin: 20px auto 0;
 }
@@ -120,7 +120,7 @@
 
 .vertical-step-bullet:hover {
     background: var(--primary);
-    color: beige;
+    color: var(--color-on-dark);
     transform: scale(1.05);
 }
 
@@ -140,14 +140,14 @@
 
 .vertical-step-content h3 {
     font-size: 1.5rem;
-    color: #252c30;
+    color: var(--color-text);
     margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
 
 .vertical-step-content p {
-    color: #777;
+    color: var(--color-text-body);
     font-size: 1rem;
 }
 
@@ -190,7 +190,7 @@
 
 .vertical-feature-highlight {
     display: inline-block;
-    background: rgba(136, 180, 78, 0.1);
+    background: rgba(45, 80, 22, 0.09);
     color: var(--primary);
     padding: 4px 12px;
     border-radius: 20px;

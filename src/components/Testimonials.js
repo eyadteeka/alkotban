@@ -20,25 +20,25 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      image: "img/testimonial-1.jpg",
+      image: `${process.env.PUBLIC_URL}/img/testimonial-placeholder.svg`,
       name: "Client Name",
       profession: "Profession"
     },
     {
       quote: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      image: "img/testimonial-2.jpg",
+      image: `${process.env.PUBLIC_URL}/img/testimonial-placeholder.svg`,
       name: "Client Name",
       profession: "Profession"
     },
     {
       quote: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      image: "img/testimonial-3.jpg",
+      image: `${process.env.PUBLIC_URL}/img/testimonial-placeholder.svg`,
       name: "Client Name",
       profession: "Profession"
     },
     {
       quote: "Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam",
-      image: "img/testimonial-4.jpg",
+      image: `${process.env.PUBLIC_URL}/img/testimonial-placeholder.svg`,
       name: "Client Name",
       profession: "Profession"
     }

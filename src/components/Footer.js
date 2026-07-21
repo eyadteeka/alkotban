@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import {
   faEnvelope,
   faMapMarkerAlt,
@@ -15,22 +16,22 @@ const Footer = () => {
       <div className="container py-5">
         <div className="row g-5">
           <div className="col-lg-4 col-md-6">
-            <a href="/" className="d-flex align-items-center brand-lockup mb-3">
-              <img className="brand-logo" src="img/alkotban-logo.png" alt={t('navbar_logo_alt')} />
+            <Link to="/" className="d-flex align-items-center brand-lockup mb-3">
+              <img className="brand-logo" src={`${process.env.PUBLIC_URL}/img/alkotban-logo.png`} alt={t('navbar_logo_alt')} />
               <span className="brand-name text-primary">{t('navbar_brand_name')}</span>
-            </a>
+            </Link>
             <p className="footer-about-blurb">{t('footer_about_blurb')}</p>
           </div>
           <div className="col-lg-3 col-md-6">
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">
               {t('footer_company_heading')}
             </h4>
-            <a className="btn btn-link" href="/#about">{t('footer_link_about')}</a>
-            <a className="btn btn-link" href="/#our_values">{t('footer_link_our_values')}</a>
-            <a className="btn btn-link" href="/#why_us">{t('footer_link_why_us')}</a>
-            <a className="btn btn-link" href="/products">{t('footer_link_products')}</a>
-            <a className="btn btn-link" href="/#partners">{t('footer_link_partners')}</a>
-            <a className="btn btn-link" href="/#contact">{t('footer_link_contact')}</a>
+            <Link className="btn btn-link" to="/#about">{t('footer_link_about')}</Link>
+            <Link className="btn btn-link" to="/#our_values">{t('footer_link_our_values')}</Link>
+            <Link className="btn btn-link" to="/#why_us">{t('footer_link_why_us')}</Link>
+            <Link className="btn btn-link" to="/products">{t('footer_link_products')}</Link>
+            <Link className="btn btn-link" to="/#partners">{t('footer_link_partners')}</Link>
+            <Link className="btn btn-link" to="/#contact">{t('footer_link_contact')}</Link>
           </div>
           <div className="col-lg-3 col-md-6">
             <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">
@@ -65,7 +66,7 @@ const Footer = () => {
         <div className="copyright">
           <div className="row">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a className="border-bottom" href="/">{t('navbar_brand_name')}</a>, {t('footer_rights')}
+              &copy; <Link className="border-bottom" to="/">{t('navbar_brand_name')}</Link>, {t('footer_rights')}
               <br /><br />
             </div>
           </div>

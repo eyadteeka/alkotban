@@ -5,13 +5,13 @@ const PartnerSection = () => {
     const { t } = useTranslation();
 
     const partnerLogos = [
-        "img/Co-logos/ALFAGEN.png",
-        "img/Co-logos/HM.png",
-        "img/Co-logos/LIMA.png",
-        "img/Co-logos/S&w.png",
-        "img/Co-logos/TORO.png",
-        "img/Co-logos/ZASCO.png",
-        "img/Co-logos/COCOLY.png",
+        `${process.env.PUBLIC_URL}/img/Co-logos/ALFAGEN.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/HM.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/LIMA.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/S&w.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/TORO.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/ZASCO.png`,
+        `${process.env.PUBLIC_URL}/img/Co-logos/COCOLY.png`,
     ];
 
     return (
