@@ -52,7 +52,7 @@ function HomePage() {
       <section id="products" data-section="products"><ProductCategories /></section>
       <section id="our_values" data-section="our_values"><Services /></section>
       <section id="why_us" data-section="why_us"><VerticalStepper /></section>
-      <SupplyNetwork />
+      {/* <SupplyNetwork /> */}
       <Process />
       <Quality />
       <section id="partners" data-section="partners"><PartnerSection /></section>
